@@ -2,31 +2,36 @@ import { motion } from "framer-motion";
 
 export default function Stats() {
   const stats = [
-    { id: 1, value: "10.000+", label: "Tấn Nông Sản" },
-    { id: 2, value: "1.000+", label: "Nông Dân & Hợp Tác Xã" },
-    { id: 3, value: "100+", label: "Doanh Nghiệp Tiêu Thụ" },
+    { value: "14+", label: "Loại nông sản", sub: "xuất khẩu chính ngạch sang TQ", icon: "🌿" },
+    { value: "3", label: "Mô hình giao dịch", sub: "Đặt trước · Đấu thầu · 3 chiều", icon: "⚡" },
+    { value: "ĐBSCL", label: "Vùng thí điểm", sub: "Cần Thơ & các tỉnh lân cận", icon: "📍" }
   ];
 
   return (
-    <section id="stats" className="bg-white py-16 border-b border-gray-100">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="py-6 md:py-0 px-4"
-            >
-              <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-2">
-                {stat.value}
-              </h2>
-              <p className="text-gray-500 font-medium text-lg">{stat.label}</p>
-            </motion.div>
-          ))}
-        </div>
+    <section id="stats" className="relative bg-gray-950 py-8 -mt-1">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-2xl border border-gray-700/50 shadow-2xl shadow-black/20 p-2"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className={`flex items-center gap-4 p-6 ${index < 2 ? 'md:border-r border-gray-700/50' : ''}`}
+              >
+                <div className="text-3xl">{stat.icon}</div>
+                <div>
+                  <p className="text-3xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">{stat.value}</p>
+                  <p className="text-white font-semibold text-sm">{stat.label}</p>
+                  <p className="text-gray-500 text-xs">{stat.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -2,9 +2,12 @@
 
 @theme {
   --font-sans: "Inter", sans-serif;
-  --color-primary: #10B981; /* Emerald 500 */
-  --color-primary-dark: #047857; /* Emerald 700 */
-  --color-accent: #F59E0B; /* Amber 500 */
+  --color-primary: #10B981;
+  /* Emerald 500 */
+  --color-primary-dark: #047857;
+  /* Emerald 700 */
+  --color-accent: #F59E0B;
+  /* Amber 500 */
 }
 
 @layer base {
@@ -12,7 +15,7 @@
     scroll-behavior: smooth;
   }
 
-  body {
+  /* body {
     @apply text-gray-800 antialiased bg-gray-50 selection:bg-primary selection:text-white;
-  }
+  } */
 }

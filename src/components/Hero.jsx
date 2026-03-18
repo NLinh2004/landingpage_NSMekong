@@ -2,81 +2,61 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center bg-gray-900 overflow-hidden pt-20">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 z-0 bg-gray-900">
-        <img
-          src="https://images.unsplash.com/photo-1595841696650-a4f61f7743d5?auto=format&fit=crop&w=2000&q=80"
-          alt="Agriculture Field"
-          className="w-full h-full object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-transparent"></div>
-      </div>
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0" style={{
+        backgroundImage: 'url("/b2.jpg")', backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}></div>
 
-      <div className="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col md:flex-row items-center gap-12">
-        
-        {/* Text Content */}
-        <motion.div
-          className="flex-1 text-center md:text-left pt-10 md:pt-0"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-green-400 text-sm font-semibold mb-6 backdrop-blur-sm"
-          >
-            🚀 Nền tảng TMĐT Nông sản B2B Đồng bằng sông Cửu Long
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/60 via-black/20 to-black/0"></div>
+
+      <div className="container mx-auto px-6 max-w-7xl relative z-10 pt-24 pb-16">
+        <div className="max-w-2xl">
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-emerald-300 text-sm font-semibold mb-6">
+              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+              Nền tảng TMĐT Nông sản B2B
+            </div>
           </motion.div>
-          
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
-            Kết nối trực tiếp nhu cầu <span className="text-primary">mua số lượng lớn</span> từ nước ngoài.
-          </h1>
-          
-          <p className="mb-10 text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed font-medium">
-            Giao thương minh bạch – Chuẩn hóa xuất khẩu – Lấy nhu cầu thị trường làm trung tâm. <br className="hidden md:block"/>Kết nối doanh nghiệp tiêu thụ toàn cầu với vùng nguyên liệu chuẩn ngạch tại Việt Nam.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2"
-            >
-              Bắt đầu trải nghiệm
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold text-lg transition-all backdrop-blur-sm"
-            >
-              Tải ứng dụng
-            </motion.button>
-          </div>
-        </motion.div>
 
-        {/* Decorative / Image block */}
-        <motion.div
-          className="flex-1 hidden lg:flex justify-end"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-        >
-          <div className="relative">
-             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
-             <img
-              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2626&auto=format&fit=crop"
-              alt="Mekong App Interface"
-              className="relative z-10 w-[450px] rounded-3xl shadow-2xl border-4 border-white/10 rotate-2 hover:rotate-0 transition-transform duration-500"
-            />
-          </div>
-        </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 drop-shadow-lg"
+          >
+            <span className="bg-gradient-to-r from-emerald-300 via-green-300 to-teal-300 bg-clip-text text-transparent">Nông sản Mekong</span>
+            <br />
+            <span className="text-white">vươn tầm thế giới.</span>
+          </motion.h1>
 
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mb-8 text-lg text-gray-200 max-w-lg leading-relaxed drop-shadow-md"
+          >
+            Kết nối doanh nghiệp nước ngoài với vùng nguyên liệu chuẩn ngạch Việt Nam. Mua trước – Sản xuất sau.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="flex flex-wrap gap-3 mb-8"
+          >
+            <a href="#cta" className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-8 py-3.5 rounded-full font-bold text-base shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105">
+              Trải nghiệm ngay →
+            </a>
+            <a href="#models" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-3.5 rounded-full font-medium text-base transition-all backdrop-blur-sm">
+              Xem mô hình
+            </a>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

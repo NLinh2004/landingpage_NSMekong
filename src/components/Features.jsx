@@ -1,73 +1,54 @@
 import { motion } from "framer-motion";
+import heroImg from "../assets/hero.png";
+
+const RICE_IMG = "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80";
+const FARM_IMG = "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80";
 
 export default function Features() {
-  const values = [
-    {
-      id: 1,
-      title: "Gửi Yêu cầu báo giá (RFQ) thông minh",
-      desc: "Trải nghiệm B2B chuyên nghiệp, cho phép người mua gửi yêu cầu báo giá chi tiết và đàm phán trực tiếp với người bán ngay trên hệ thống.",
-      icon: "📋"
-    },
-    {
-      id: 2,
-      title: "Huy hiệu Doanh nghiệp đã xác thực",
-      desc: "Hệ thống kiểm duyệt chặt chẽ bởi Admin đối với hồ sơ doanh nghiệp và sản phẩm. Chỉ đơn vị có giấy phép và chứng nhận hợp lệ mới được cấp quyền giao dịch.",
-      icon: "🛡️"
-    },
-    {
-      id: 3,
-      title: "Không gian đấu thầu bảo mật",
-      desc: "Giao dịch an toàn với thuật toán mã hóa hiện đại, đảm bảo tuyệt đối quyền lợi và sự riêng tư cho cả bên mua và bên bán trong quá trình thương lượng báo giá.",
-      icon: "🔒"
-    }
+  const features = [
+    { title: "RFQ Thông Minh", desc: "Song ngữ Việt–Trung. Tự động kết nối NCC.", icon: "📋", color: "from-emerald-500 to-green-600" },
+    { title: "Verified Supplier", desc: "Kiểm duyệt giấy phép, mã vùng trồng.", icon: "🛡️", color: "from-blue-500 to-indigo-600" },
+    { title: "Đấu Thầu Bảo Mật", desc: "Khóa thông tin, chống ép giá.", icon: "🔒", color: "from-purple-500 to-violet-600" },
+    { title: "Truy Xuất Nguồn Gốc", desc: "QR Code. GACC 248/249.", icon: "🔍", color: "from-amber-500 to-orange-600" }
   ];
 
   return (
-    <section id="features" className="py-24 bg-white relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-green-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-orange-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-
+    <section id="features" className="py-24 bg-gray-50 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-100 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
-          {/* Left Side: Sticky Intro */}
-          <div className="lg:w-1/3 lg:sticky top-32 self-start">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-snug">
-              Tại sao chọn <br/>
-              <span className="text-primary">Mekong Agri?</span>
-            </h2>
-            <p className="text-gray-600 text-lg mb-8">
-              Chúng tôi không chỉ cung cấp nguyên liệu, chúng tôi mang tới một hệ sinh thái minh bạch và bền vững cho chuỗi cung ứng.
-            </p>
-            <motion.button 
-              className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all"
-            >
-              Tìm hiểu thêm về công nghệ
-              <span>→</span>
-            </motion.button>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Image */}
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img src={heroImg} alt="Vùng nguyên liệu Mekong" className="w-full h-[380px] object-cover" />
+            </div>
+            <motion.div animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 2.5 }}
+              className="absolute -bottom-4 -right-4 bg-white rounded-xl px-4 py-3 shadow-lg border border-gray-100">
+              <p className="text-emerald-600 font-extrabold text-xl">ĐBSCL</p>
+              <p className="text-gray-500 text-xs">Vùng thí điểm</p>
+            </motion.div>
+          </motion.div>
 
-          {/* Right Side: Grid */}
-          <div className="lg:w-2/3 grid sm:grid-cols-2 gap-8">
-            {values.map((v, index) => (
-              <motion.div 
-                key={v.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white border text-left border-gray-100 p-8 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow"
-              >
-                <div className="text-4xl mb-6 bg-gray-50 w-16 h-16 rounded-xl flex items-center justify-center">
-                  {v.icon}
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{v.title}</h4>
-                <p className="text-gray-600 leading-relaxed text-sm">{v.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          {/* Right */}
+          <div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+                Tính năng <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">nổi bật</span>
+              </h3>
+              <p className="text-gray-500 mb-8">Số hóa toàn diện cho TMĐT nông sản.</p>
+            </motion.div>
 
+            <div className="grid sm:grid-cols-2 gap-4">
+              {features.map((f, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ y: -4 }}
+                  className="bg-white rounded-xl p-5 shadow-sm hover:shadow-lg border border-gray-100 transition-all">
+                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${f.color} flex items-center justify-center text-xl mb-3 shadow-md`}>{f.icon}</div>
+                  <h4 className="font-bold text-gray-900 text-sm mb-1">{f.title}</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
