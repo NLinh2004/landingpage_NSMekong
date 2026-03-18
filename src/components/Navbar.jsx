@@ -13,11 +13,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
           ? 'bg-white/80 backdrop-blur-md shadow-sm py-4'
           : 'bg-transparent py-6'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 max-w-7xl flex flex-wrap justify-between items-center">
         {/* Logo */}
@@ -31,7 +30,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 items-center">
+        <div className="hidden md:flex space-x-4 items-center">
           {[
             { name: 'Giá trị', href: '#audience' },
             { name: 'Mô hình', href: '#models' },
@@ -41,9 +40,10 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className={`font-medium hover:text-primary transition-colors ${
-                scrolled ? 'text-gray-600' : 'text-white/90 hover:text-white'
-              }`}
+              className={`font-medium px-5 py-2 rounded-full transition-all border ${scrolled
+                  ? 'text-gray-700 border-gray-200 hover:border-emerald-500 hover:bg-emerald-500/5 hover:text-emerald-600'
+                  : 'text-white border-white/20 hover:border-white/50 hover:bg-white/10 backdrop-blur-sm'
+                }`}
             >
               {item.name}
             </a>

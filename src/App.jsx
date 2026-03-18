@@ -20,7 +20,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-gray-50 flex flex-col font-sans overflow-visible">
       <Navbar />
       <Hero />
       <TargetAudience />
@@ -34,12 +34,18 @@ export default function App() {
         {showFloating && (
           <motion.a
             href="#cta"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3.5 rounded-full font-bold shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 transition-all flex items-center gap-2"
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-6 right-6 z-[9999] bg-gradient-to-r from-emerald-500 to-green-600 text-white px-5 py-3 rounded-xl font-semibold shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all flex items-center gap-2 backdrop-blur-md"
           >
-            <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+            {/* Icon */}
+            <span className="w-2.5 h-2.5 bg-white rounded-full animate-pulse"></span>
+
+            {/* Text */}
             Trải nghiệm ngay
           </motion.a>
         )}

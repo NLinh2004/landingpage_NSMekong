@@ -1,13 +1,39 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const backgrounds = [
+  "/b4.jpg",
+  "/b1.jpg"
+];
 
 export default function Hero() {
+  const [currentBg, setCurrentBg] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 5000); // Đổi ảnh mỗi 5 giây
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0" style={{
-        backgroundImage: 'url("/b2.jpg")', backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}></div>
+    <section id="home" className="relative h-[85vh] min-h-[650px] flex items-center justify-center overflow-hidden bg-black">
+      {/* Background image slider */}
+      <AnimatePresence>
+        <motion.div
+          key={currentBg}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url("${backgrounds[currentBg]}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      </AnimatePresence>
 
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/60 via-black/20 to-black/0"></div>
@@ -18,7 +44,7 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-emerald-300 text-sm font-semibold mb-6">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-              Nền tảng TMĐT Nông sản B2B
+              Nền tảng TMĐT Nông sản
             </div>
           </motion.div>
 
