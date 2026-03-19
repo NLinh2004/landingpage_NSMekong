@@ -30,7 +30,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="features" className="py-24 bg-gray-50 relative overflow-hidden">
       {/* background blur */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-100 rounded-full blur-3xl opacity-30"></div>
 
@@ -40,7 +40,9 @@ export default function Features() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            style={{ willChange: "transform, opacity" }}
             className="relative"
           >
             {/* layer dưới (tạo hiệu ứng mockup) */}
@@ -74,7 +76,9 @@ export default function Features() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              style={{ willChange: "transform, opacity" }}
             >
               {/* pill badge */}
               <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 border border-emerald-200">
@@ -125,10 +129,11 @@ export default function Features() {
                   key={i}
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -6 }}
-                  className="bg-white rounded-xl p-5 shadow-sm hover:shadow-xl border border-gray-100 transition-all"
+                  style={{ willChange: "transform, opacity" }}
+                  className="bg-white rounded-xl p-5 shadow-sm hover:shadow-xl border border-gray-100 transition-shadow duration-300"
                 >
                   <div
                     className={`w-11 h-11 rounded-lg bg-gradient-to-br ${f.color} flex items-center justify-center text-lg mb-3 shadow-md`}
