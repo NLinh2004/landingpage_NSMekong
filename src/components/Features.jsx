@@ -36,7 +36,6 @@ export default function Features() {
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-
           {/* LEFT IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -65,9 +64,7 @@ export default function Features() {
               transition={{ repeat: Infinity, duration: 2.5 }}
               className="absolute -bottom-5 -right-5 bg-white rounded-xl px-4 py-3 shadow-xl border border-gray-100"
             >
-              <p className="text-emerald-600 font-extrabold text-lg">
-                ĐBSCL
-              </p>
+              <p className="text-emerald-600 font-extrabold text-lg">ĐBSCL</p>
               <p className="text-gray-500 text-xs">Vùng thí điểm</p>
             </motion.div>
           </motion.div>
@@ -79,15 +76,45 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+              {/* pill badge */}
+              <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 border border-emerald-200">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Công nghệ nền tảng
+              </span>
+
+              <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
                 Tính năng{" "}
-                <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
+                <span
+                  className="relative inline-block"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #10b981 0%, #0d9488 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
                   nổi bật
+                  <svg
+                    className="absolute -bottom-1 left-0 w-full"
+                    viewBox="0 0 80 8"
+                    fill="none"
+                  >
+                    <path
+                      d="M2 6 Q40 1 78 6"
+                      stroke="#10b981"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
                 </span>
               </h3>
 
-              <p className="text-gray-500 mb-8">
-                Số hóa toàn diện cho TMĐT nông sản.
+              <p className="text-gray-500 text-base leading-relaxed mb-8">
+                Số hóa toàn diện cho{" "}
+                <strong className="text-gray-700 font-semibold">
+                  TMĐT nông sản
+                </strong>{" "}
+                — từ kết nối đến truy xuất.
               </p>
             </motion.div>
 
@@ -120,7 +147,6 @@ export default function Features() {
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>
