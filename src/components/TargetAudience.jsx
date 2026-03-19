@@ -162,7 +162,7 @@ export default function TargetAudience() {
                 {sellerValues.map((item, idx) => (
                   <div
                     key={idx}
-                    className="group rounded-xl p-4 transition-all duration-200 cursor-default hover:shadow-md"
+                    className="group rounded-xl p-[9px] transition-all duration-200 cursor-default hover:shadow-md"
                     style={{
                       background: "rgba(255,255,255,0.35)",
                       border: "1px solid rgba(255,255,255,0.55)",
@@ -240,7 +240,7 @@ export default function TargetAudience() {
                 {buyerValues.map((item, idx) => (
                   <div
                     key={idx}
-                    className="group rounded-xl p-4 transition-all duration-200 cursor-default hover:shadow-md"
+                    className="group rounded-xl p-[14px] transition-all duration-200 cursor-default hover:shadow-md"
                     style={{
                       background: "rgba(255,255,255,0.35)",
                       border: "1px solid rgba(255,255,255,0.55)",
