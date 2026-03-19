@@ -48,7 +48,8 @@ export default function CTA() {
 
           {/* ── Heading ── */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-sm">
-            Cùng xây dựng chuỗi cung ứng
+            Cùng xây dựng <br />
+            chuỗi cung ứng
             <br className="hidden sm:block" />
             <span
               className="relative inline-block mt-1"
