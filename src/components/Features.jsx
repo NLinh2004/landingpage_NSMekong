@@ -41,7 +41,7 @@ export default function Features() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
             style={{ willChange: "transform, opacity" }}
             className="relative"
           >
@@ -63,7 +63,7 @@ export default function Features() {
             {/* badge */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 2.5 }}
+              transition={{ repeat: Infinity, duration: 4.0 }}
               className="absolute -bottom-5 -right-5 bg-white rounded-xl px-4 py-3 shadow-xl border border-gray-100"
             >
               <p className="text-emerald-600 font-extrabold text-lg">ĐBSCL</p>
@@ -77,7 +77,7 @@ export default function Features() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
               style={{ willChange: "transform, opacity" }}
             >
               {/* pill badge */}
@@ -130,7 +130,7 @@ export default function Features() {
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ delay: i * 0.2, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -6 }}
                   style={{ willChange: "transform, opacity" }}
                   className="bg-white rounded-xl p-5 shadow-sm hover:shadow-xl border border-gray-100 transition-shadow duration-300"

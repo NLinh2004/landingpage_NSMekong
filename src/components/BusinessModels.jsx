@@ -56,6 +56,7 @@ export default function BusinessModels() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           {/* pill badge */}
@@ -110,16 +111,16 @@ export default function BusinessModels() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.25, duration: 0.9 }}
               whileHover={{ y: -6 }}
-              className={`group ${model.bg} rounded-2xl ${model.border} border overflow-hidden hover:shadow-2xl transition-all duration-400`}
+              className={`group ${model.bg} rounded-2xl ${model.border} border overflow-hidden hover:shadow-2xl transition-all duration-700`}
             >
               {/* Image */}
               <div className="relative h-40 overflow-hidden">
                 <img
                   src={model.img}
                   alt={model.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div

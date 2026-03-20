@@ -72,7 +72,7 @@ export default function TargetAudience() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.9 }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           {/* pill badge */}
@@ -122,7 +122,7 @@ export default function TargetAudience() {
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.85 }}
             className="relative rounded-2xl overflow-hidden shadow-xl"
             style={{
               background: "rgba(255,255,255,0.45)",
@@ -200,7 +200,7 @@ export default function TargetAudience() {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.1 }}
+            transition={{ duration: 0.85, delay: 0.2 }}
             className="relative rounded-2xl overflow-hidden shadow-xl"
             style={{
               background: "rgba(255,255,255,0.45)",

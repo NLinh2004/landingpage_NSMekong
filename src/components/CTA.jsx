@@ -38,7 +38,7 @@ export default function CTA() {
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.65 }}
+          transition={{ duration: 1.0 }}
         >
           {/* ── Pill badge ── */}
           <span className="inline-flex items-center gap-2 bg-white/25 backdrop-blur-sm text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-8 border border-white/40 shadow-sm">
@@ -132,7 +132,7 @@ export default function CTA() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.35, duration: 0.5 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
             className="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/70 text-sm font-medium"
           >
             {[
