@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gray-950 text-gray-500 py-10 border-t border-white/5">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -30,7 +33,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Mekong Agri. Toàn quyền bảo lưu.
+            © {new Date().getFullYear()} {t('footer.rights')}
           </p>
 
           <div className="flex gap-6 text-sm">
@@ -38,19 +41,19 @@ export default function Footer() {
               href="#"
               className="hover:text-white duration-200 transition-colors"
             >
-              Điều khoản
+              {t('footer.terms')}
             </a>
             <a
               href="#"
               className="hover:text-white duration-200 transition-colors"
             >
-              Bảo mật
+              {t('footer.privacy')}
             </a>
             <a
               href="#"
               className="hover:text-white duration-200 transition-colors"
             >
-              Liên hệ
+              {t('footer.contact')}
             </a>
           </div>
         </div>

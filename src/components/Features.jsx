@@ -1,30 +1,32 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import heroImg from "../assets/hero.png"; // đảm bảo đúng đường dẫn
 
 export default function Features() {
+  const { t } = useTranslation();
   const features = [
     {
-      title: "RFQ Thông Minh",
-      desc: "Song ngữ Việt–Trung. Tự động kết nối NCC.",
-      icon: "📋",
+      title: t('features.f1_title'),
+      desc: t('features.f1_desc'),
+      icon: "🤝",
       color: "from-emerald-500 to-green-600",
     },
     {
-      title: "Verified Supplier",
-      desc: "Kiểm duyệt giấy phép, mã vùng trồng.",
-      icon: "🛡️",
+      title: t('features.f2_title'),
+      desc: t('features.f2_desc'),
+      icon: "💬",
       color: "from-blue-500 to-indigo-600",
     },
     {
-      title: "Đấu Thầu Bảo Mật",
-      desc: "Khóa thông tin, chống ép giá.",
-      icon: "🔒",
+      title: t('features.f3_title'),
+      desc: t('features.f3_desc'),
+      icon: "📜",
       color: "from-purple-500 to-violet-600",
     },
     {
-      title: "Truy Xuất Nguồn Gốc",
-      desc: "QR Code. GACC 248/249.",
-      icon: "🔍",
+      title: t('features.f4_title'),
+      desc: t('features.f4_desc'),
+      icon: "🚚",
       color: "from-amber-500 to-orange-600",
     },
   ];
@@ -66,8 +68,8 @@ export default function Features() {
               transition={{ repeat: Infinity, duration: 4.0 }}
               className="absolute -bottom-5 -right-5 bg-white rounded-xl px-4 py-3 shadow-xl border border-gray-100"
             >
-              <p className="text-emerald-600 font-extrabold text-lg">ĐBSCL</p>
-              <p className="text-gray-500 text-xs">Vùng thí điểm</p>
+              <p className="text-emerald-600 font-extrabold text-lg">{t('features.badge_1')}</p>
+              <p className="text-gray-500 text-xs">{t('features.badge_2')}</p>
             </motion.div>
           </motion.div>
 
@@ -83,11 +85,11 @@ export default function Features() {
               {/* pill badge */}
               <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 border border-emerald-200">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Công nghệ nền tảng
+                {t('features.badge_3')}
               </span>
 
               <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 leading-tight">
-                Tính năng{" "}
+                {t('features.title_1')}{" "}
                 <span
                   className="relative inline-block"
                   style={{
@@ -97,7 +99,7 @@ export default function Features() {
                     WebkitTextFillColor: "transparent",
                   }}
                 >
-                  nổi bật
+                  {t('features.title_2')}
                   <svg
                     className="absolute -bottom-1 left-0 w-full"
                     viewBox="0 0 80 8"
@@ -114,11 +116,11 @@ export default function Features() {
               </h3>
 
               <p className="text-gray-500 text-base leading-relaxed mb-8">
-                Số hóa toàn diện cho{" "}
+                {t('features.desc_1')}{" "}
                 <strong className="text-gray-700 font-semibold">
-                  TMĐT nông sản
+                  {t('features.desc_2')}
                 </strong>{" "}
-                — từ kết nối đến truy xuất.
+                {t('features.desc_3')}
               </p>
             </motion.div>
 

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function CTA() {
+  const { t } = useTranslation();
   return (
     <section
       id="cta"
@@ -43,14 +45,12 @@ export default function CTA() {
           {/* ── Pill badge ── */}
           <span className="inline-flex items-center gap-2 bg-white/25 backdrop-blur-sm text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-8 border border-white/40 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-yellow-300 animate-pulse" />
-            Giai đoạn thí điểm – ĐBSCL
+            {t('cta.badge')}
           </span>
 
           {/* ── Heading ── */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-sm">
-            Cùng xây dựng <br />
-            chuỗi cung ứng
-            <br className="hidden sm:block" />
+          <h2 className="text-4xl md:text-5xl lg:text-3xl font-extrabold text-white mb-6 leading-tight drop-shadow-sm">
+            {t('cta.title_1')} <br className="md:hidden" />
             <span
               className="relative inline-block mt-1"
               style={{
@@ -59,7 +59,7 @@ export default function CTA() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              minh bạch &amp; bền vững
+              {t('cta.title_2')}
               <svg
                 className="absolute -bottom-1 left-0 w-full"
                 viewBox="0 0 400 10"
@@ -73,19 +73,11 @@ export default function CTA() {
                 />
               </svg>
             </span>
+            <br className="md:hidden" /> {t('cta.title_3')}
           </h2>
 
-          {/* ── Sub-text ── */}
-          <p className="text-lg md:text-xl text-white/80 mb-14 leading-relaxed max-w-2xl mx-auto font-medium">
-            Doanh nghiệp, HTX, nhà sản xuất nông sản – Hãy trở thành{" "}
-            <strong className="text-yellow-200 font-bold">
-              đối tác tiên phong
-            </strong>{" "}
-            trên nền tảng Mekong Agri.
-          </p>
-
           {/* ── CTA buttons ── */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
             {/* Primary */}
             <motion.a
               href="#"
@@ -108,7 +100,7 @@ export default function CTA() {
                   animation: "shimmer 0.7s linear forwards",
                 }}
               />
-              Đăng ký hợp tác →
+              {t('cta.btn_primary')}
             </motion.a>
 
             {/* Secondary – glass */}
@@ -123,7 +115,7 @@ export default function CTA() {
                 WebkitBackdropFilter: "blur(14px)",
               }}
             >
-              Liên hệ tư vấn
+              {t('cta.btn_secondary')}
             </motion.a>
           </div>
 
@@ -136,9 +128,9 @@ export default function CTA() {
             className="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/70 text-sm font-medium"
           >
             {[
-              { icon: "🔒", label: "Bảo mật dữ liệu" },
-              { icon: "⚡", label: "Onboarding nhanh 24h" },
-              { icon: "🌱", label: "Miễn phí giai đoạn thử nghiệm" },
+              { icon: "🔒", label: t('cta.trust_1') },
+              { icon: "⚡", label: t('cta.trust_2') },
+              { icon: "🌱", label: t('cta.trust_3') },
             ].map((item, i) => (
               <span key={i} className="flex items-center gap-1.5">
                 <span>{item.icon}</span>

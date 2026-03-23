@@ -1,7 +1,17 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  
+  const currentLang = i18n.language?.substring(0,2).toUpperCase() || "VI";
+  const languages = [
+    { code: "vi", label: "Tiếng Việt", display: "VN" },
+    { code: "en", label: "English", display: "EN" },
+    { code: "cn", label: "中文", display: "CN" }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,10 +47,10 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-4 items-center">
           {[
-            { name: "Giá trị", href: "#audience" },
-            { name: "Mô hình", href: "#models" },
-            { name: "Tính năng", href: "#features" },
-            { name: "Liên hệ", href: "#cta" },
+            { name: t('navbar.values'), href: "#audience" },
+            { name: t('navbar.models'), href: "#models" },
+            { name: t('navbar.features'), href: "#features" },
+            { name: t('navbar.contact'), href: "#cta" },
           ].map((item) => (
             <a
               key={item.name}
@@ -54,6 +64,38 @@ export default function Navbar() {
               {item.name}
             </a>
           ))}
+
+          {/* Language Switcher Dropdown */}
+          <div className="relative ml-4 pl-4 border-l border-white/20" style={{ borderColor: scrolled ? '#e5e7eb' : 'rgba(255,255,255,0.2)' }}>
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
+                scrolled
+                  ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-white/10 text-white hover:bg-white/20 backdrop-blur-md"
+              }`}
+            >
+              🌐 {currentLang}
+              <svg className={`w-4 h-4 transition-transform ${langOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+
+            {/* Dropdown Menu */}
+            {langOpen && (
+              <div className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-gray-100 py-1 overflow-hidden z-50">
+                {languages.map((l) => (
+                  <button
+                    key={l.code}
+                    onMouseDown={() => { i18n.changeLanguage(l.code); setLangOpen(false); }}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                      i18n.language?.startsWith(l.code) ? "bg-emerald-50 text-emerald-600 font-bold" : "text-gray-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    {l.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

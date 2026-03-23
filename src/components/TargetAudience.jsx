@@ -1,49 +1,51 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function TargetAudience() {
+  const { t } = useTranslation();
   const sellerValues = [
     {
+      icon: "🌍",
+      title: t('audience.seller_1_title'),
+      desc: t('audience.seller_1_desc'),
+    },
+    {
+      icon: "📉",
+      title: t('audience.seller_2_title'),
+      desc: t('audience.seller_2_desc'),
+    },
+    {
+      icon: "⚡",
+      title: t('audience.seller_3_title'),
+      desc: t('audience.seller_3_desc'),
+    },
+    {
       icon: "📦",
-      title: '"Bán trước – Sản xuất sau"',
-      desc: "Nhận đơn trước thu hoạch, chủ động nguồn cung.",
-    },
-    {
-      icon: "🔐",
-      title: "Đấu thầu kín, công bằng",
-      desc: "Hệ thống khóa giá đối thủ, chống ép giá.",
-    },
-    {
-      icon: "🔗",
-      title: "Bỏ trung gian cò lái",
-      desc: "Kết nối trực tiếp: Buyer → DN → Nông dân.",
-    },
-    {
-      icon: "📜",
-      title: "Hồ sơ số chuyên nghiệp",
-      desc: "VietGAP, GlobalGAP, OCOP, mã vùng trồng.",
+      title: t('audience.seller_4_title'),
+      desc: t('audience.seller_4_desc'),
     },
   ];
 
   const buyerValues = [
     {
-      icon: "✅",
-      title: "Chuẩn ngạch GACC 100%",
-      desc: "Đáp ứng Lệnh 248, 249 Hải quan TQ.",
-    },
-    {
-      icon: "🎯",
-      title: "Đấu thầu tìm giá tối ưu",
-      desc: "Đưa yêu cầu → nhận báo giá tự động.",
-    },
-    {
       icon: "🏭",
-      title: "Nguồn cung lớn & ổn định",
-      desc: "Tập hợp DN, HTX toàn vùng ĐBSCL.",
+      title: t('audience.buyer_1_title'),
+      desc: t('audience.buyer_1_desc'),
     },
     {
       icon: "🔍",
-      title: "Truy xuất từ vườn",
-      desc: "QR Code, nhật ký canh tác, kiểm dịch.",
+      title: t('audience.buyer_2_title'),
+      desc: t('audience.buyer_2_desc'),
+    },
+    {
+      icon: "🛡️",
+      title: t('audience.buyer_3_title'),
+      desc: t('audience.buyer_3_desc'),
+    },
+    {
+      icon: "⏱️",
+      title: t('audience.buyer_4_title'),
+      desc: t('audience.buyer_4_desc'),
     },
   ];
 
@@ -78,11 +80,11 @@ export default function TargetAudience() {
           {/* pill badge */}
           <span className="inline-flex items-center gap-1.5 bg-white/25 backdrop-blur-sm text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-5 border border-white/40 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-yellow-300 animate-pulse" />
-            Dành cho tất cả
+            {t('audience.badge')}
           </span>
 
           <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight drop-shadow-sm">
-            Lợi ích cho{" "}
+            {t('audience.title_1')}{" "}
             <span
               className="relative inline-block"
               style={{
@@ -91,7 +93,7 @@ export default function TargetAudience() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              mọi bên
+              {t('audience.title_2')}
               {/* underline accent */}
               <svg
                 className="absolute -bottom-1 left-0 w-full"
@@ -109,9 +111,9 @@ export default function TargetAudience() {
           </h3>
 
           <p className="text-white/85  text-base md:text-lg font-medium leading-relaxed">
-            Nền tảng tối ưu cho cả{" "}
-            <strong className="text-yellow-200">nhà cung cấp Việt</strong> và{" "}
-            <strong className="text-white">người mua quốc tế.</strong>
+            {t('audience.desc_1')}{" "}
+            <strong className="text-yellow-200">{t('audience.desc_2')}</strong> {t('audience.desc_3')}{" "}
+            <strong className="text-white">{t('audience.desc_4')}</strong>
           </p>
         </motion.div>
 
@@ -150,10 +152,10 @@ export default function TargetAudience() {
                     className="text-lg font-bold leading-none"
                     style={{ color: "#1a3a10" }}
                   >
-                    Nhà Cung Cấp Việt Nam
+                    {t('audience.seller_title')}
                   </h4>
                   <p className="text-xs mt-0.5" style={{ color: "#4a7a3a" }}>
-                    Suppliers
+                    {t('audience.seller_subtitle')}
                   </p>
                 </div>
               </div>
@@ -228,10 +230,10 @@ export default function TargetAudience() {
                     className="text-lg font-bold leading-none"
                     style={{ color: "#1a3a10" }}
                   >
-                    Người Mua Quốc Tế
+                    {t('audience.buyer_title')}
                   </h4>
                   <p className="text-xs mt-0.5" style={{ color: "#4a7a3a" }}>
-                    Global Buyers
+                    {t('audience.buyer_subtitle')}
                   </p>
                 </div>
               </div>

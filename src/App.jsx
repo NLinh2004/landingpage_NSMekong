@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TargetAudience from "./components/TargetAudience";
@@ -9,6 +10,7 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
 export default function App() {
+  const { t } = useTranslation();
   const [showFloating, setShowFloating] = useState(false);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function App() {
             <span className="w-2.5 h-2.5 bg-white rounded-full animate-pulse"></span>
 
             {/* Text */}
-            Trải nghiệm ngay
+            {t('app.floating_cta')}
           </motion.a>
         )}
       </AnimatePresence>

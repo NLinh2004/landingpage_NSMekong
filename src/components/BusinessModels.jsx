@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function BusinessModels() {
+  const { t } = useTranslation();
   const models = [
     {
       number: "01",
-      title: "Đặt trước theo lô",
-      subtitle: "Bán trước – Sản xuất sau",
+      title: t('models.model_1_title'),
+      subtitle: t('models.model_1_subtitle'),
       points: [
-        "Hợp đồng & đặt cọc",
-        "Thu mua theo đơn",
-        "Kiểm định GACC",
-        "Xuất khẩu chính ngạch",
+        t('models.model_1_p1'),
+        t('models.model_1_p2'),
+        t('models.model_1_p3'),
+        t('models.model_1_p4'),
       ],
       gradient: "from-emerald-500 to-green-600",
       bg: "bg-emerald-50",
@@ -19,13 +21,13 @@ export default function BusinessModels() {
     },
     {
       number: "02",
-      title: "Đấu thầu kín",
-      subtitle: "Tìm giá tối ưu – Công bằng",
+      title: t('models.model_2_title'),
+      subtitle: t('models.model_2_subtitle'),
       points: [
-        "NCC chào giá bảo mật",
-        "Chấm điểm đa tiêu chí",
-        "Hệ thống chọn tự động",
-        "Chống ép giá",
+        t('models.model_2_p1'),
+        t('models.model_2_p2'),
+        t('models.model_2_p3'),
+        t('models.model_2_p4'),
       ],
       gradient: "from-blue-500 to-indigo-600",
       bg: "bg-blue-50",
@@ -34,13 +36,13 @@ export default function BusinessModels() {
     },
     {
       number: "03",
-      title: "Thị trường 3 chiều",
-      subtitle: "Buyer – DN – Nông dân",
+      title: t('models.model_3_title'),
+      subtitle: t('models.model_3_subtitle'),
       points: [
-        "Minh bạch cung cầu",
-        "Nông dân biết thị trường",
-        "GPS vùng trồng",
-        "Giảm tồn kho",
+        t('models.model_3_p1'),
+        t('models.model_3_p2'),
+        t('models.model_3_p3'),
+        t('models.model_3_p4'),
       ],
       gradient: "from-amber-500 to-orange-600",
       bg: "bg-amber-50",
@@ -62,11 +64,11 @@ export default function BusinessModels() {
           {/* pill badge */}
           <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 border border-emerald-200">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Mô hình giao dịch
+            {t('models.badge')}
           </span>
 
           <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
-            3 mô hình{" "}
+            {t('models.title_1')}{" "}
             <span
               className="relative inline-block"
               style={{
@@ -75,7 +77,7 @@ export default function BusinessModels() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              linh hoạt
+              {t('models.title_2')}
               <svg
                 className="absolute -bottom-1 left-0 w-full"
                 viewBox="0 0 100 8"
@@ -92,15 +94,14 @@ export default function BusinessModels() {
           </h3>
 
           <p className="text-gray-500 text-base leading-relaxed">
-            Phù hợp từ{" "}
+            {t('models.desc_1')}{" "}
             <strong className="text-gray-700 font-semibold">
-              container lớn
+              {t('models.desc_2')}
             </strong>{" "}
-            đến{" "}
+            {t('models.desc_3')}{" "}
             <strong className="text-gray-700 font-semibold">
-              lô thử nghiệm TMĐT
+              {t('models.desc_4')}
             </strong>
-            .
           </p>
         </motion.div>
 
