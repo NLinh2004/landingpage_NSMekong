@@ -5,8 +5,8 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  
-  const currentLang = i18n.language?.substring(0,2).toUpperCase() || "VI";
+
+  const currentLang = i18n.language?.substring(0, 2).toUpperCase() || "VI";
   const languages = [
     { code: "vi", label: "Tiếng Việt", display: "VN" },
     { code: "en", label: "English", display: "EN" },
@@ -23,25 +23,54 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+          : "bg-transparent"
+        }`}
     >
-      <div className="container mx-auto px-6 max-w-7xl flex flex-wrap justify-between items-center">
-        {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-xl">M</span>
-          </div>
-          <span
-            className={`text-2xl font-extrabold tracking-tight ${
-              scrolled ? "text-gray-900" : "text-gray-900 md:text-white"
+      {/* Top Bar */}
+      <div className={`transition-all duration-300 border-b border-white/5 ${
+        scrolled 
+          ? "bg-emerald-600/5 py-1" 
+          : "bg-black/10 py-1.5 backdrop-blur-sm"
+      }`}>
+        <div className="container mx-auto px-6 max-w-7xl">
+          <a
+            href="https://ctise.vn/"
+            className={`group inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold transition-all ${
+              scrolled ? "text-emerald-800/60 hover:text-emerald-600" : "text-white/60 hover:text-white"
             }`}
           >
-            Mekong<span className="text-primary">Agri</span>
-          </span>
+            <svg className="w-3 h-3 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            QUAY LẠI CTISE.VN
+          </a>
+        </div>
+      </div>
+
+      <div className={`container mx-auto px-6 max-w-7xl flex justify-between items-center transition-all duration-300 ${
+        scrolled ? "py-2.5" : "py-4"
+      }`}>
+        {/* Logo Section */}
+        <a href="#home" className="flex items-center gap-2.5 group">
+          <div className="relative h-11 w-11 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+            <img src="/logo.png" alt="Logo" className="h-full w-full object-contain" />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span
+              className={`text-xl md:text-2xl font-semibold tracking-tighter transition-colors ${
+                scrolled ? "text-gray-900" : "text-gray-900 md:text-white"
+              }`}
+            >
+              Mekong<span className="text-emerald-500 font-extrabold">Agri</span>
+            </span>
+            <span className={`text-[9px] font-bold tracking-[0.2em] uppercase mt-0.5 ${
+              scrolled ? "text-emerald-600/50" : "text-white/40"
+            }`}>
+              Agriculture Solution
+            </span>
+          </div>
         </a>
 
         {/* Desktop Menu */}
@@ -50,16 +79,15 @@ export default function Navbar() {
             { name: t('navbar.values'), href: "#audience" },
             { name: t('navbar.models'), href: "#models" },
             { name: t('navbar.features'), href: "#features" },
-            { name: t('navbar.contact'), href: "#cta" },
+            { name: t('navbar.contact'), href: "https://ctise.vn/lien-he/" },
           ].map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className={`font-medium px-5 py-2 rounded-full transition-all border ${
-                scrolled
+              className={`font-medium px-5 py-2 rounded-full transition-all border ${scrolled
                   ? "text-gray-700 border-gray-200 hover:border-emerald-500 hover:bg-emerald-500/5 hover:text-emerald-600"
                   : "text-white border-white/20 hover:border-white/50 hover:bg-white/10 backdrop-blur-lg"
-              }`}
+                }`}
             >
               {item.name}
             </a>
@@ -69,11 +97,10 @@ export default function Navbar() {
           <div className="relative ml-4 pl-4 border-l border-white/20" style={{ borderColor: scrolled ? '#e5e7eb' : 'rgba(255,255,255,0.2)' }}>
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                scrolled
-                  ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  : "bg-white/10 text-white hover:bg-white/20 backdrop-blur-md"
-              }`}
+              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all border cursor-pointer ${scrolled
+                  ? "bg-white text-emerald-600 border-emerald-500/60 shadow-[0_0_12px_rgba(16,185,129,0.4)] hover:shadow-[0_0_20px_rgba(16,185,129,0.6)]"
+                  : "bg-emerald-500/10 text-white border-emerald-400/60 shadow-[0_0_12px_rgba(52,211,153,0.4)] hover:shadow-[0_0_20px_rgba(52,211,153,0.6)] backdrop-blur-md"
+                }`}
             >
               🌐 {currentLang}
               <svg className={`w-4 h-4 transition-transform ${langOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -86,9 +113,9 @@ export default function Navbar() {
                   <button
                     key={l.code}
                     onMouseDown={() => { i18n.changeLanguage(l.code); setLangOpen(false); }}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                      i18n.language?.startsWith(l.code) ? "bg-emerald-50 text-emerald-600 font-bold" : "text-gray-600 hover:bg-gray-50"
-                    }`}
+                    style={{ cursor: 'pointer' }}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${i18n.language?.startsWith(l.code) ? "bg-emerald-50 text-emerald-600 font-bold" : "text-gray-600 hover:bg-gray-50"
+                      }`}
                   >
                     {l.label}
                   </button>

@@ -118,7 +118,7 @@ export default function Hero() {
               <a href="#models" className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-8 py-3.5 rounded-full font-bold text-base shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105">
                 {t('hero.btn_primary')} →
               </a>
-              <a href="#cta" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-3.5 rounded-full font-medium text-base transition-all backdrop-blur-sm">
+              <a href="https://ctise.vn/lien-he/" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-3.5 rounded-full font-medium text-base transition-all backdrop-blur-sm">
                 {t('hero.btn_secondary')}
               </a>
             </motion.div>

@@ -50,7 +50,7 @@ export default function Footer() {
               {t('footer.privacy')}
             </a>
             <a
-              href="#"
+              href="https://ctise.vn/lien-he/"
               className="hover:text-white duration-200 transition-colors"
             >
               {t('footer.contact')}

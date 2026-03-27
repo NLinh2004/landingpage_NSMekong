@@ -80,7 +80,7 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
             {/* Primary */}
             <motion.a
-              href="#"
+              href="https://ctise.vn/lien-he/"
               whileHover={{ scale: 1.06, y: -2 }}
               whileTap={{ scale: 0.96 }}
               className="relative w-full sm:w-auto overflow-hidden group px-10 py-4 rounded-full font-bold text-lg text-center shadow-xl"
