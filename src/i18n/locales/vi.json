@@ -7,15 +7,15 @@
   },
   "hero": {
     "coming_soon": "Sắp ra mắt",
-    "headline_1": "Nền tảng kết nối",
-    "headline_2": "cung cầu nông sản Việt",
-    "subheadline": "Thúc đẩy thương mại nông sản trực tiếp từ vùng nguyên liệu đến thị trường quốc tế.",
+    "headline_1": "Sàn giao dịch <br /> nông sản Việt Nam <br /> với quốc tế",
+    "headline_2": "",
+    "subheadline": "Thúc đẩy thương mại, kết nối trực tiếp nhà cung cấp và người mua trong một hệ thống có kiểm soát an ninh.",
     "days": "NGÀY",
     "hours": "GIỜ",
     "minutes": "PHÚT",
     "seconds": "GIÂY",
-    "btn_primary": "Liên hệ để tìm hiểu",
-    "btn_secondary": "Liên hệ hợp tác",
+    "btn_primary": "Xem thông tin chi tiết",
+    "btn_secondary": "Nhận tư vấn miễn phí",
     "expected_goals": "Mục tiêu dự kiến",
     "stat_1_num": "1.000+",
     "stat_1_text": "nhà cung cấp",
@@ -23,6 +23,20 @@
     "stat_2_text": "đơn vị nhập khẩu",
     "stat_3_num": "100+",
     "stat_3_text": "mặt hàng nông sản"
+  },
+  "market_story": {
+    "title": "Câu chuyện thị trường",
+    "headline_1": "Thách thức của",
+    "headline_2": "Nông sản Việt",
+    "p1": "Trong những năm gần đây, nông sản Việt Nam liên tục tăng trưởng, với kim ngạch xuất khẩu năm 2025 đạt khoảng 70 tỷ USD và đang tiếp tục khởi sắc. Nhiều mặt hàng như rau quả, cà phê, hạt điều duy trì nhu cầu cao tại các thị trường lớn như Mỹ, EU và Trung Quốc.",
+    "p2": "Tuy nhiên, phía sau những con số ấn tượng đó, tình trạng “được mùa mất giá”, phụ thuộc vào trung gian và thiếu đầu ra ổn định vẫn còn diễn ra, dẫn đến việc nông sản bị tồn đọng hoặc không tiêu thụ kịp thời. Nguyên nhân chủ yếu là do người sản xuất và doanh nghiệp trong nước chưa khai thác hiệu quả cơ hội từ thị trường quốc tế: người sản xuất khó tiếp cận trực tiếp thị trường, khi doanh nghiệp nhập khẩu lại gặp rủi ro về chất lượng, tính minh bạch và thanh toán.",
+    "p3": "Do đó, vấn đề không nằm ở việc thiếu nhu cầu, mà là ở niềm tin và khả năng kết nối hiệu quả",
+    "export_value": "Kim ngạch xuất khẩu"
+  },
+  "solution_intro": {
+    "badge": "Giải pháp Mekong Agri",
+    "title": "Vì thế chúng tôi mang đến một giải pháp",
+    "desc": "Sàn TMĐT nông sản B2B chuyên biệt cho nông sản Việt Nam, nơi người bán và người mua có thể kết nối trực tiếp mà không cần phụ thuộc vào chuỗi trung gian truyền thống."
   },
   "app": {
     "floating_cta": "Liên hệ tìm hiểu mô hình ngay"
@@ -58,24 +72,55 @@
     "badge_1": "ĐBSCL",
     "badge_2": "Vùng thí điểm",
     "badge_3": "Công nghệ nền tảng",
-    "title_1": "Giải pháp",
-    "title_2": "nổi bật",
-    "desc_1": "Nền tảng giao dịch",
-    "desc_2": "nông sản xuất khẩu toàn diện",
-    "desc_3": "— Tất cả trong một hệ thống duy nhất.",
-    "f1_title": "Kết nối buyer – supplier",
-    "f1_desc": "Trực tiếp, không qua trung gian.",
-    "f2_title": "Hỗ trợ RFQ & Đàm phán",
-    "f2_desc": "Hệ thống báo giá, thương lượng minh bạch.",
-    "f3_title": "Quản lý hợp đồng",
+    "title_1": "Bảo đảm an ninh",
+    "title_2": "toàn bộ giao dịch",
+    "desc_1": "Chúng tôi thiết lập một",
+    "desc_2": "hệ thống kiểm soát đa tầng",
+    "desc_3": "để bảo vệ quyền lợi của thành viên.",
+    "f1_title": "Xác thực danh tính",
+    "f1_desc": "100% doanh nghiệp được xác minh pháp lý và năng lực trước khi tham gia.",
+    "f2_title": "Cơ chế thanh toán an toàn",
+    "f2_desc": "Tiền được giữ tại hệ thống và chỉ giải ngân khi người mua xác nhận đã nhận hàng.",
     "f3_desc": "Ký kết an toàn, bảo mật thông tin tối đa.",
-    "f4_title": "Thanh toán & Logistics",
-    "f4_desc": "Tích hợp chứng từ, vận chuyển toàn diện."
+    "f4_title": "Logistics Toàn diện",
+    "f4_desc": "Tích hợp chứng từ, vận chuyển toàn diện.",
+    "f5_title": "Đánh giá có kiểm chứng",
+    "f5_desc": "Đánh giá chỉ được ghi nhận sau giao dịch hoàn tất, gắn với lịch sử đơn hàng thực tế.",
+    "alt_logistic": "Logistics Nông nghiệp Số",
+    "uptime_security": "An ninh Hoạt động"
+  },
+  "process": {
+    "title": "Quy trình khép kín và minh bạch",
+    "step_1_title": "Xác minh nguồn cung",
+    "step_1_desc": "Nhà cung cấp được kiểm tra pháp lý, năng lực và chuẩn hóa sản phẩm",
+    "step_2_title": "Kết nối nhu cầu",
+    "step_2_desc": "Người mua tìm kiếm hoặc gửi yêu cầu trực tiếp đến nhà cung cấp phù hợp",
+    "step_3_title": "Thỏa thuận & ký quỹ",
+    "step_3_desc": "Giao dịch được thiết lập với cơ chế thanh toán trung gian để đảm bảo hai bên",
+    "step_4_title": "Giao hàng & theo dõi",
+    "step_4_desc": "Toàn bộ quá trình vận chuyển và chứng từ được cập nhật theo thời gian thực",
+    "step_5_title": "Hoàn tất & xác nhận",
+    "step_5_desc": "Thanh toán chỉ được giải ngân khi giao dịch hoàn thành"
+  },
+  "commitment": {
+    "title": "Cam kết đồng hành",
+    "headline_1": "Cam kết từ",
+    "headline_2": "Mekong Agri",
+    "f1_title": "Hỗ trợ kỹ thuật",
+    "f1_desc": "Đội ngũ chuyên gia hỗ trợ nhà vườn chuẩn hóa dữ liệu số.",
+    "f2_title": "Tư vấn thị trường",
+    "f2_desc": "Hướng dẫn doanh nghiệp điều chỉnh sản phẩm theo xu hướng \"ready-to-use\" của quốc tế.",
+    "tech_support_label": "Hỗ trợ kỹ thuật",
+    "market_insights_label": "Thông tin thị trường",
+    "partner_badge": "Đối tác tin cậy",
+    "quality_seal": "Chất lượng Kiểm chứng",
+    "partner_quote": "Chúng tôi không chỉ xây dựng nền tảng, chúng tôi xây dựng hệ sinh thái bền vững cho nông sản Việt."
   },
   "audience": {
     "badge": "Dành cho tất cả",
     "title_1": "Lợi ích cho",
     "title_2": "mọi bên",
+    "title": "Lợi ích vượt trội cho cộng đồng",
     "desc_1": "Nền tảng tối ưu cho cả",
     "desc_2": "nhà cung cấp Việt",
     "desc_3": "và",
@@ -116,6 +161,7 @@
     "rights": "Mekong Agri. Toàn quyền bảo lưu.",
     "terms": "Điều khoản",
     "privacy": "Bảo mật",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "partner_label": "Đối tác chiến lược"
   }
 }

@@ -7,29 +7,29 @@ export default function Footer() {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{
-                background: "linear-gradient(135deg, #81ff8a, #64965e)",
-              }}
-            >
-              <span className="font-bold text-sm" style={{ color: "#1a3a10" }}>
-                M
-              </span>
-            </div>
-            <span className="text-lg font-extrabold text-white tracking-tight">
-              Mekong
-              <span
+          <div className="flex items-center gap-6">
+            {/* Mekong Agri Logo */}
+            <div className="flex items-center gap-2">
+              <div
+                className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm"
                 style={{
                   background: "linear-gradient(135deg, #81ff8a, #64965e)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  color: "#1a3a10"
                 }}
               >
-                Agri
+                M
+              </div>
+              <span className="text-lg font-extrabold text-white tracking-tight">
+                Mekong<span className="text-emerald-500">Agri</span>
               </span>
-            </span>
+            </div>
+            {/* Divider */}
+            <div className="h-6 w-[1px] bg-white/20 hidden md:block" />
+            {/* Institute Logo */}
+            <div className="flex items-center gap-2 text-white/50 text-xs font-bold uppercase tracking-widest">
+              <img src="/logo.png" alt="Viện" className="h-10 w-10 object-contain brightness-0 invert opacity-70" />
+              <span className="whitespace-pre-line">{t('footer.partner_label')}</span>
+            </div>
           </div>
 
           <p className="text-sm text-gray-600">

@@ -1,54 +1,65 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
+import heroShipImg from "../assets/hero_ship.png";
 
 const backgrounds = [
   "/b4.jpg",
-  "/b1.jpg"
+  "/b1.jpg",
+  heroShipImg
 ];
 
 export default function Hero() {
   const { t } = useTranslation();
   const [currentBg, setCurrentBg] = useState(0);
-  const [timeLeft, setTimeLeft] = useState({ days: 365, hours: 23, minutes: 59, seconds: 59 });
+
+  // --- Countdown Logic ---
+  const [timeLeft, setTimeLeft] = useState({
+    days: "00", hours: "00", minutes: "00", seconds: "00"
+  });
+
+  useEffect(() => {
+    const targetDate = new Date("2026-12-31T23:59:59").getTime();
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        clearInterval(interval);
+      } else {
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+        setTimeLeft({
+          days: String(d).padStart(2, '0'),
+          hours: String(h).padStart(2, '0'),
+          minutes: String(m).padStart(2, '0'),
+          seconds: String(s).padStart(2, '0')
+        });
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const bgTimer = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
-    }, 5000); // Đổi ảnh mỗi 5 giây
+    }, 7000);
 
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 365);
-
-    const countdownTimer = setInterval(() => {
-      const difference = targetDate.getTime() - new Date().getTime();
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        });
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(bgTimer);
-      clearInterval(countdownTimer);
-    };
+    return () => clearInterval(bgTimer);
   }, []);
 
   return (
     <>
-      <section id="home" className="relative w-full min-h-[100vh] lg:min-h-[850px] flex items-start justify-center overflow-hidden bg-black pt-28 md:pt-32 pb-48 lg:pb-64">
+      <section id="home" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-black pt-20 pb-28 lg:pb-20">
         {/* Background image slider */}
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           <motion.div
             key={currentBg}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 2.5, ease: "easeInOut" }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute inset-0 z-0"
             style={{
               backgroundImage: `url("${backgrounds[currentBg]}")`,
@@ -58,128 +69,85 @@ export default function Hero() {
           />
         </AnimatePresence>
 
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/60 via-black/20 to-black/0"></div>
+        {/* Clean Gradient Overlay for Left Readability */}
+        <div className="absolute inset-0 z-[1] bg-black/30"></div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col items-start w-full">
-          <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
+            className="max-w-3xl text-left"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500 text-white text-xs font-bold uppercase tracking-[0.2em] mb-8 shadow-lg shadow-emerald-500/20">
+              {t('hero.coming_soon')}
+            </span>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.0 }} className="mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-emerald-300 text-sm font-semibold shadow-sm">
-                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                {t('hero.coming_soon')}
-              </div>
-            </motion.div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-8 drop-shadow-2xl">
+              <Trans i18nKey="hero.headline_1" />
+            </h1>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 1.0 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 drop-shadow-lg text-white"
-            >
-              {t('hero.headline_1')} <br />
-              <span className="bg-gradient-to-r from-emerald-300 via-green-300 to-teal-300 bg-clip-text text-transparent">{t('hero.headline_2')}</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 1.0 }}
-              className="mb-8 text-lg text-gray-200 max-w-lg leading-relaxed drop-shadow-md"
-            >
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-12 leading-relaxed font-medium drop-shadow-md">
               {t('hero.subheadline')}
-            </motion.p>
+            </p>
 
-            {/* Countdown Timer */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 1.0 }}
-              className="flex gap-4 mb-8"
-            >
-              {Object.entries(timeLeft).map(([unit, value]) => (
-                <div key={unit} className="flex flex-col items-center">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center text-xl sm:text-2xl font-bold text-emerald-300 shadow-inner">
-                    {value.toString().padStart(2, '0')}
+            {/* --- Countdown Timer UI (Resized to be smaller) --- */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              {[
+                { label: t('hero.days'), value: timeLeft.days },
+                { label: t('hero.hours'), value: timeLeft.hours },
+                { label: t('hero.minutes'), value: timeLeft.minutes },
+                { label: t('hero.seconds'), value: timeLeft.seconds }
+              ].map((time, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-xl">
+                    <span className="text-2xl md:text-3xl font-bold text-emerald-400">
+                      {time.value}
+                    </span>
                   </div>
-                  <span className="text-[10px] sm:text-xs text-gray-300 mt-2 uppercase tracking-wider font-semibold">
-                    {unit === 'days' ? t('hero.days') : unit === 'hours' ? t('hero.hours') : unit === 'minutes' ? t('hero.minutes') : t('hero.seconds')}
+                  <span className="mt-2 text-[9px] font-bold text-white/50 uppercase tracking-[0.2em]">
+                    {time.label}
                   </span>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.75, duration: 1.0 }}
-              className="flex flex-wrap gap-3 mb-8"
-            >
-              <a href="#models" className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-8 py-3.5 rounded-full font-bold text-base shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105">
-                {t('hero.btn_primary')} →
-              </a>
-              <a href="https://ctise.vn/lien-he/" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-3.5 rounded-full font-medium text-base transition-all backdrop-blur-sm">
+            <div className="flex flex-wrap gap-6">
+              <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-12 py-4 rounded-full font-bold text-lg transition-all shadow-2xl shadow-emerald-900/30 hover:scale-105 active:scale-95">
+                {t('hero.btn_primary')}
+              </button>
+              <a href="https://ctise.vn/lien-he/" className="bg-white/10 hover:bg-white/20 text-white border border-white/40 px-12 py-4 rounded-full font-bold text-lg transition-all backdrop-blur-md">
                 {t('hero.btn_secondary')}
               </a>
-            </motion.div>
-
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* STATS SECTION - Floating Box */}
-      <div className="relative z-30 w-full flex justify-center h-0">
-        <div className="absolute top-[-3rem] md:top-[-4.5rem] lg:top-[-5.5rem] -translate-y-1/2 px-6 w-full max-w-5xl">
-          <div className="bg-[#FEFCF4] rounded-[1.5rem] shadow-[0_12px_40px_rgba(0,0,0,0.1)] border border-white/60 px-4 py-6 sm:p-6 md:p-8 backdrop-blur-md">
-            <div className="text-center mb-4 md:mb-6">
-              <span className="text-[#0A804A] text-xs font-semibold uppercase tracking-widest opacity-80">
-                — {t('hero.expected_goals')} —
-              </span>
-            </div>
-            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8">
-
-              {/* Stat 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="flex flex-col items-center md:items-start"
-              >
-                <span className="text-xl sm:text-2xl md:text-[2.75rem] font-extrabold text-[#FC8251] mb-1 leading-none">{t('hero.stat_1_num')}</span>
-                <div className="border-b-[2px] md:border-b-[2.5px] border-[#0A804A] pb-1 md:pb-1.5 w-full max-w-[220px] text-center md:text-left">
-                  <span className="text-[10px] sm:text-xs md:text-lg font-semibold text-[#0A804A] leading-tight block">{t('hero.stat_1_text')}</span>
-                </div>
-              </motion.div>
-
-              {/* Stat 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex flex-col items-center md:items-start"
-              >
-                <span className="text-xl sm:text-2xl md:text-[2.75rem] font-extrabold text-[#FC8251] mb-1 leading-none">{t('hero.stat_2_num')}</span>
-                <div className="border-b-[2px] md:border-b-[2.5px] border-[#0A804A] pb-1 md:pb-1.5 w-full max-w-[220px] text-center md:text-left">
-                  <span className="text-[10px] sm:text-xs md:text-lg font-semibold text-[#0A804A] leading-tight block">{t('hero.stat_2_text')}</span>
-                </div>
-              </motion.div>
-
-              {/* Stat 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-col items-center md:items-start"
-              >
-                <span className="text-xl sm:text-2xl md:text-[2.75rem] font-extrabold text-[#FC8251] mb-1 leading-none">{t('hero.stat_3_num')}</span>
-                <div className="border-b-[2px] md:border-b-[2.5px] border-[#0A804A] pb-1 md:pb-1.5 w-full max-w-[220px] text-center md:text-left">
-                  <span className="text-[10px] sm:text-xs md:text-lg font-semibold text-[#0A804A] leading-tight block">{t('hero.stat_3_text')}</span>
-                </div>
-              </motion.div>
-
+      {/* STATS SECTION - Floating Box (Restored and Refined) */}
+      <div className="relative z-30 w-full flex justify-center -mt-12 px-6 mb-12">
+        <div className="w-full max-w-6xl">
+          <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 md:p-10">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+              <div className="flex-shrink-0">
+                <span className="text-amber-700 text-xs font-black uppercase tracking-[0.3em] bg-amber-100 px-6 py-2.5 rounded-full block text-center md:text-left border border-amber-200">
+                  — {t('hero.expected_goals')} —
+                </span>
+              </div>
+              <div className="flex-grow grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 w-full">
+                {[
+                  { num: t('hero.stat_1_num'), label: t('hero.stat_1_text'), color: "text-amber-600" },
+                  { num: t('hero.stat_2_num'), label: t('hero.stat_2_text'), color: "text-amber-600" },
+                  { num: t('hero.stat_3_num'), label: t('hero.stat_3_text'), color: "text-amber-600" }
+                ].map((stat, i) => (
+                  <div key={i} className="flex flex-col items-center md:items-start">
+                    <span className={`text-4xl lg:text-5xl font-black ${stat.color} mb-1 tracking-tighter`}>{stat.num}</span>
+                    <p className="text-slate-600 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
+                    <div className="w-8 h-1 bg-amber-500/10 mt-3 rounded-full" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

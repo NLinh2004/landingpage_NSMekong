@@ -1,163 +1,88 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import {
+  FileText,
+  Search,
+  CreditCard,
+  Ship,
+  CheckCircle2
+} from "lucide-react";
 
 export default function BusinessModels() {
   const { t } = useTranslation();
-  const models = [
-    {
-      number: "01",
-      title: t('models.model_1_title'),
-      subtitle: t('models.model_1_subtitle'),
-      points: [
-        t('models.model_1_p1'),
-        t('models.model_1_p2'),
-        t('models.model_1_p3'),
-        t('models.model_1_p4'),
-      ],
-      gradient: "from-emerald-500 to-green-600",
-      bg: "bg-emerald-50",
-      border: "border-emerald-200",
-      img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80",
-    },
-    {
-      number: "02",
-      title: t('models.model_2_title'),
-      subtitle: t('models.model_2_subtitle'),
-      points: [
-        t('models.model_2_p1'),
-        t('models.model_2_p2'),
-        t('models.model_2_p3'),
-        t('models.model_2_p4'),
-      ],
-      gradient: "from-blue-500 to-indigo-600",
-      bg: "bg-blue-50",
-      border: "border-blue-200",
-      img: "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=600&q=80",
-    },
-    {
-      number: "03",
-      title: t('models.model_3_title'),
-      subtitle: t('models.model_3_subtitle'),
-      points: [
-        t('models.model_3_p1'),
-        t('models.model_3_p2'),
-        t('models.model_3_p3'),
-        t('models.model_3_p4'),
-      ],
-      gradient: "from-amber-500 to-orange-600",
-      bg: "bg-amber-50",
-      border: "border-amber-200",
-      img: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=600&q=80",
-    },
+
+  const steps = [
+    { id: "01", title: t('process.step_1_title'), desc: t('process.step_1_desc'), icon: <FileText className="w-10 h-10" />, color: "from-emerald-400 to-emerald-600" },
+    { id: "02", title: t('process.step_2_title'), desc: t('process.step_2_desc'), icon: <Search className="w-10 h-10" />, color: "from-teal-400 to-teal-600" },
+    { id: "03", title: t('process.step_3_title'), desc: t('process.step_3_desc'), icon: <CreditCard className="w-10 h-10" />, color: "from-sky-400 to-sky-600" },
+    { id: "04", title: t('process.step_4_title'), desc: t('process.step_4_desc'), icon: <Ship className="w-10 h-10" />, color: "from-indigo-400 to-indigo-600" },
+    { id: "05", title: t('process.step_5_title'), desc: t('process.step_5_desc'), icon: <CheckCircle2 className="w-10 h-10" />, color: "from-amber-400 to-amber-600" },
   ];
 
   return (
-    <section id="models" className="py-24 bg-white">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
-          className="text-center mb-16 max-w-2xl mx-auto"
-        >
-          {/* pill badge */}
-          <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 border border-emerald-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            {t('models.badge')}
-          </span>
+    <section id="process" className="relative py-16 bg-white overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-0 w-full h-[1px] bg-slate-100 -z-10" />
 
-          <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
-            {t('models.title_1')}{" "}
-            <span
-              className="relative inline-block"
-              style={{
-                background: "linear-gradient(135deg, #10b981 0%, #0d9488 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              {t('models.title_2')}
-              <svg
-                className="absolute -bottom-1 left-0 w-full"
-                viewBox="0 0 100 8"
-                fill="none"
-              >
-                <path
-                  d="M2 6 Q50 1 98 6"
-                  stroke="#10b981"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
-          </h3>
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-3 mb-8">
+              <div className="h-[2px] w-12 bg-emerald-500"></div>
+              <span className="text-emerald-500 font-black text-sm tracking-[0.2em]">{t('process.title')}</span>
+              <div className="h-[2px] w-12 bg-emerald-500"></div>
+            </div>
 
-          <p className="text-gray-500 text-base leading-relaxed">
-            {t('models.desc_1')}{" "}
-            <strong className="text-gray-700 font-semibold">
-              {t('models.desc_2')}
-            </strong>{" "}
-            {t('models.desc_3')}{" "}
-            <strong className="text-gray-700 font-semibold">
-              {t('models.desc_4')}
-            </strong>
-          </p>
-        </motion.div>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight">
+              {t('process.title')}
+            </h3>
+          </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {models.map((model, index) => (
+        <div className="relative">
+          {/* Connector Line for Desktop */}
+          <div className="hidden lg:block absolute top-[60px] left-[10%] right-[10%] h-1 bg-slate-100 rounded-full z-0">
             <motion.div
-              key={model.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="h-full bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500"
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.25, duration: 0.9 }}
-              whileHover={{ y: -6 }}
-              className={`group ${model.bg} rounded-2xl ${model.border} border overflow-hidden hover:shadow-2xl transition-all duration-700`}
-            >
-              {/* Image */}
-              <div className="relative h-40 overflow-hidden">
-                <img
-                  src={model.img}
-                  alt={model.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div
-                  className={`absolute top-4 left-4 w-10 h-10 rounded-xl bg-gradient-to-br ${model.gradient} text-white font-extrabold text-sm flex items-center justify-center shadow-lg`}
-                >
-                  {model.number}
-                </div>
-              </div>
+              transition={{ duration: 2, ease: "easeInOut" }}
+            />
+          </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h4 className="text-lg font-bold text-gray-900 mb-0.5">
-                  {model.title}
+          <div className="grid lg:grid-cols-5 gap-8 relative z-10">
+            {steps.map((step, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                className="flex flex-col items-center group text-center"
+              >
+                <div className="relative mb-8">
+                  <div className={`w-24 h-24 rounded-3xl bg-white border border-slate-100 shadow-2xl flex items-center justify-center text-emerald-600 group-hover:border-emerald-300 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10`}>
+                    {step.icon}
+                  </div>
+                  {/* Decorative background shape */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-20 blur-[40px] transition-opacity duration-500`} />
+
+                  <div className={`absolute -top-3 -right-3 w-10 h-10 rounded-2xl bg-gradient-to-br ${step.color} text-white text-xs font-black flex items-center justify-center shadow-xl border-4 border-white z-20`}>
+                    {step.id}
+                  </div>
+                </div>
+                <h4 className="text-xl font-black text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors tracking-tight">
+                  {step.title}
                 </h4>
-                <p
-                  className={`text-xs font-semibold bg-gradient-to-r ${model.gradient} bg-clip-text text-transparent mb-4`}
-                >
-                  {model.subtitle}
-                </p>
-
-                <div className="space-y-2">
-                  {model.points.map((p, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-2 text-sm text-gray-600"
-                    >
-                      <span
-                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${model.gradient}`}
-                      ></span>
-                      {p}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                <p className="text-slate-500 text-sm leading-relaxed font-medium px-2">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

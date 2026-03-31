@@ -7,15 +7,15 @@
   },
   "hero": {
     "coming_soon": "Coming soon",
-    "headline_1": "Connecting Platform",
-    "headline_2": "Vietnamese Agri Supply & Demand",
-    "subheadline": "Promoting direct agricultural trade from raw material areas to international markets.",
+    "headline_1": "Vietnam Agricultural Exchange with International Markets",
+    "headline_2": "",
+    "subheadline": "Promoting trade, directly connecting suppliers and buyers in a security-controlled system.",
     "days": "DAYS",
     "hours": "HOURS",
     "minutes": "MINUTES",
     "seconds": "SECONDS",
-    "btn_primary": "Contact to learn more",
-    "btn_secondary": "Contact for partnership",
+    "btn_primary": "View Details",
+    "btn_secondary": "Free Consultation",
     "expected_goals": "Expected Goals",
     "stat_1_num": "1,000+",
     "stat_1_text": "suppliers",
@@ -23,6 +23,20 @@
     "stat_2_text": "importers",
     "stat_3_num": "100+",
     "stat_3_text": "agricultural products"
+  },
+  "market_story": {
+    "title": "Market Story",
+    "headline_1": "Challenges of",
+    "headline_2": "Vietnamese Produce",
+    "p1": "In recent years, Vietnamese agriculture has continuously grown, with export turnover in 2025 reaching about 70 billion USD and continuing to flourish. Many items such as fruits and vegetables, coffee, and cashew nuts maintain high demand in major markets like the US, EU, and China.",
+    "p2": "However, behind those impressive figures, the situation of 'good harvest but low prices', dependence on intermediaries, and lack of stable output still occurs, leading to agricultural products being backlogged or not consumed in time. The main reason is that local producers and businesses have not effectively exploited opportunities from the international market: producers find it difficult to access the market directly, while importing enterprises face risks in quality, transparency, and payment.",
+    "p3": "Therefore, the problem is not a lack of demand, but lies in trust and the ability to connect effectively.",
+    "export_value": "Export Value"
+  },
+  "solution_intro": {
+    "badge": "Mekong Agri Solution",
+    "title": "That's why we bring a solution",
+    "desc": "A specialized B2B agricultural E-commerce platform for Vietnamese agriculture, where sellers and buyers can connect directly without depending on traditional intermediary chains."
   },
   "app": {
     "floating_cta": "Contact to explore the model now"
@@ -58,19 +72,49 @@
     "badge_1": "Mekong Delta",
     "badge_2": "Pilot region",
     "badge_3": "Platform Technology",
-    "title_1": "Outstanding",
-    "title_2": "solutions",
-    "desc_1": "Comprehensive export agricultural",
-    "desc_2": "trading platform",
-    "desc_3": "— All in one single system.",
-    "f1_title": "Connect buyer – supplier",
-    "f1_desc": "Directly, without intermediaries.",
-    "f2_title": "RFQ & Negotiation support",
-    "f2_desc": "Transparent quoting and negotiation system.",
-    "f3_title": "Contract management",
+    "title_1": "Security Guarantee",
+    "title_2": "for all transactions",
+    "desc_1": "We establish a",
+    "desc_2": "multi-layer control system",
+    "desc_3": "to protect the interests of members.",
+    "f1_title": "Identity Verification",
+    "f1_desc": "100% of businesses are verified for legal status and capacity before joining.",
+    "f2_title": "Safe Payment Mechanism",
+    "f2_desc": "Funds are held in system and only released when buyer confirms receipt of goods.",
     "f3_desc": "Secure signing, maximum information security.",
-    "f4_title": "Payment & Logistics",
-    "f4_desc": "Document integration, comprehensive shipping."
+    "f4_title": "Comprehensive Logistics",
+    "f4_desc": "Integrated documentation, comprehensive shipping.",
+    "f5_title": "Verified Reviews",
+    "f5_desc": "Reviews are only recorded after transaction completion, linked to actual order history.",
+    "alt_logistic": "Digital Agriculture Logistics",
+    "uptime_security": "Uptime Security"
+  },
+  "process": {
+    "title": "Closed and Transparent Process",
+    "step_1_title": "Supply Verification",
+    "step_1_desc": "Suppliers are checked for legal status, capacity, and product standardization",
+    "step_2_title": "Demand Connection",
+    "step_2_desc": "Buyers search or send requests directly to suitable suppliers",
+    "step_3_title": "Agreement & Escrow",
+    "step_3_desc": "Transactions are established with an intermediary payment mechanism to ensure both parties",
+    "step_4_title": "Delivery & Tracking",
+    "step_4_desc": "The entire shipping process and documents are updated in real-time",
+    "step_5_title": "Completion & Confirmation",
+    "step_5_desc": "Payment is only released when the transaction is completed"
+  },
+  "commitment": {
+    "title": "Commitment to Accompany",
+    "headline_1": "Commitment from",
+    "headline_2": "Mekong Agri",
+    "f1_title": "Technical Support",
+    "f1_desc": "Team of experts supporting gardens to standardize digital data.",
+    "f2_title": "Market Consulting",
+    "f2_desc": "Guiding businesses to adjust products according to international 'ready-to-use' trends.",
+    "tech_support_label": "Technical Support",
+    "market_insights_label": "Market Insights",
+    "partner_badge": "Reliable Partner",
+    "quality_seal": "Certified Quality",
+    "partner_quote": "We don't just build a platform, we build a sustainable ecosystem for Vietnamese agriculture."
   },
   "audience": {
     "badge": "For Everyone",
@@ -81,6 +125,7 @@
     "desc_3": "and",
     "desc_4": "international buyers.",
     "seller_title": "Vietnamese Suppliers",
+    "title": "Outstanding Benefits for the Community",
     "seller_subtitle": "Suppliers",
     "seller_1_title": "Direct access",
     "seller_1_desc": "Demand from international markets.",
@@ -116,6 +161,7 @@
     "rights": "Mekong Agri. All rights reserved.",
     "terms": "Terms",
     "privacy": "Privacy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "partner_label": "Strategic Partner"
   }
 }
