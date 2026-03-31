@@ -64,7 +64,11 @@ export default function Navbar() {
           </a>
 
           {/* Language Switcher */}
-          <div className="relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setLangOpen(true)}
+            onMouseLeave={() => setLangOpen(false)}
+          >
             <button
               onClick={() => setLangOpen(!langOpen)}
               className={`flex items-center gap-1 text-xs font-bold uppercase transition-all cursor-pointer ${scrolled ? "text-slate-900" : "text-white"}`}
@@ -75,16 +79,20 @@ export default function Navbar() {
 
             {/* Dropdown Menu */}
             {langOpen && (
-              <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-xl border border-slate-100 py-1 overflow-hidden z-50">
-                {languages.map((l) => (
-                  <button
-                    key={l.code}
-                    onMouseDown={() => { i18n.changeLanguage(l.code); setLangOpen(false); }}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${i18n.language?.startsWith(l.code) ? "bg-emerald-50 text-emerald-500 font-bold" : "text-slate-600 hover:bg-slate-50"}`}
-                  >
-                    {l.label}
-                  </button>
-                ))}
+              <div
+                className="absolute right-0 pt-2 w-32 z-50"
+              >
+                <div className="bg-white rounded-lg shadow-xl border border-slate-100 py-1 overflow-hidden">
+                  {languages.map((l) => (
+                    <button
+                      key={l.code}
+                      onMouseDown={() => { i18n.changeLanguage(l.code); setLangOpen(false); }}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors ${i18n.language?.startsWith(l.code) ? "bg-emerald-50 text-emerald-500 font-bold" : "text-slate-600 hover:bg-slate-50"}`}
+                    >
+                      {l.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>

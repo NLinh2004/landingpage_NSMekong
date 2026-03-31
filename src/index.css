@@ -10,6 +10,12 @@
   /* Amber 500 / Gold */
   --color-navy: #0f172a;
   /* Slate 900 */
+  --font-weight-normal: 300;
+  --font-weight-medium: 400;
+  --font-weight-semibold: 400;
+  --font-weight-bold: 400;
+  --font-weight-extrabold: 500;
+  --font-weight-black: 500;
 }
 
 @layer components {

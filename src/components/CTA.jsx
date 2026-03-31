@@ -81,7 +81,7 @@ export default function CTA() {
 
                 {/* Secondary – glass */}
                 <motion.a
-                  href="#"
+                  href="https://ctise.vn/lien-he/"
                   whileHover={{ scale: 1.05, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-full sm:w-auto px-12 py-5 rounded-2xl font-black text-lg text-white border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:bg-white/10 flex items-center justify-center"
