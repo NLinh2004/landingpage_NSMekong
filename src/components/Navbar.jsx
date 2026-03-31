@@ -31,9 +31,8 @@ export default function Navbar() {
       <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
         {/* Logo Section */}
         <a href="#home" className="flex items-center gap-2 group">
-          <img src="/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
-          <span className={`text-2xl font-bold tracking-tight transition-colors ${scrolled ? "text-slate-900" : "text-white"
-            }`}>
+          <img src="/logo.png" alt="Viện" className="h-10 w-10 object-contain" />
+          <span className={`text-2xl font-bold tracking-tight transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
             Mekong<span className="text-emerald-500">Agri</span>
           </span>
         </a>

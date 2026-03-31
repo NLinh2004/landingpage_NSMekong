@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="h-6 w-[1px] bg-white/20 hidden md:block" />
             {/* Institute Logo */}
             <div className="flex items-center gap-2 text-white/50 text-xs font-bold uppercase tracking-widest">
-              <img src="/logo.png" alt="Viện" className="h-10 w-10 object-contain brightness-0 invert opacity-70" />
+              <img src="/logo.png" alt="Viện" className="h-12 w-12 object-contain" />
               <span className="whitespace-pre-line">{t('footer.partner_label')}</span>
             </div>
           </div>

@@ -47,7 +47,7 @@ export default function TargetAudience() {
           >
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="h-[2px] w-12 bg-amber-500"></div>
-               <span className="text-amber-600 font-black text-sm tracking-[0.3em]">{t('audience.badge')}</span>
+              <span className="text-amber-600 font-black text-sm tracking-[0.3em]">{t('audience.badge')}</span>
               <div className="h-[2px] w-12 bg-amber-500"></div>
             </div>
 
@@ -84,7 +84,7 @@ export default function TargetAudience() {
                 </div>
                 <div>
                   <h4 className="text-2xl font-black text-slate-900 tracking-tighter">{t('audience.seller_title')}</h4>
-                   <p className="text-amber-600 font-black text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.seller_subtitle')}</p>
+                  <p className="text-amber-600 font-black text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.seller_subtitle')}</p>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ export default function TargetAudience() {
                 </div>
                 <div>
                   <h4 className="text-2xl font-black text-slate-900 tracking-tighter">{t('audience.buyer_title')}</h4>
-                   <p className="text-emerald-600 font-black text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.buyer_subtitle')}</p>
+                  <p className="text-emerald-600 font-black text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.buyer_subtitle')}</p>
                 </div>
               </div>
 
