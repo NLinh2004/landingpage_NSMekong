@@ -6,7 +6,7 @@ import {
   Truck,
   Star
 } from "lucide-react";
-import logisticImgV2 from "../assets/logistic_v2.png";
+import logisticImgV3 from "../assets/logistic_v3.png";
 
 export default function Features() {
   const { t } = useTranslation();
@@ -22,20 +22,20 @@ export default function Features() {
       title: t('features.f2_title'),
       desc: t('features.f2_desc'),
       icon: <MessageSquare className="w-6 h-6" />,
-      color: "from-blue-400 to-blue-600",
+      color: "from-blue-500 to-blue-500",
     },
     // Đã xóa phần f3 ở đây
     {
       title: t('features.f4_title'),
       desc: t('features.f4_desc'),
       icon: <Truck className="w-6 h-6" />,
-      color: "from-emerald-400 to-teal-600",
+      color: "from-emerald-500 to-emerald-700",
     },
     {
       title: t('features.f5_title'),
       desc: t('features.f5_desc'),
       icon: <Star className="w-6 h-6" />,
-      color: "from-blue-500 to-indigo-600",
+      color: "from-blue-500 to-blue-500",
     },
   ];
 
@@ -60,7 +60,7 @@ export default function Features() {
             <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-blue-500/10 rounded-3xl blur-3xl opacity-60 transform rotate-3"></div>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
               <img
-                src={logisticImgV2}
+                src={logisticImgV3}
                 alt={t('features.alt_logistic')}
                 className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-[2s]"
               />
@@ -116,7 +116,7 @@ export default function Features() {
                   whileHover={{ x: 5 }}
                   className="bg-white rounded-2xl p-4 shadow-xl shadow-slate-200/50 border border-slate-50 flex items-center gap-4 transition-all duration-300 group"
                 >
-                  <div className={`shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center shadow-lg text-white transform group-hover:rotate-12 transition-transform`}>
+                  <div className={`shrink-0 w-12 h-12 rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center shadow-lg text-white transform group-hover:scale-110 transition-transform duration-300`}>
                     {f.icon}
                   </div>
                   <div>
