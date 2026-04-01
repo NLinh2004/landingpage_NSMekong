@@ -16,17 +16,17 @@ export default function TargetAudience() {
   const { t } = useTranslation();
 
   const sellerValues = [
-    { icon: <Globe size={20} />, title: t('audience.seller_1_title'), desc: t('audience.seller_1_desc'), color: "from-blue-400 to-blue-600" },
-    { icon: <TrendingUp size={20} />, title: t('audience.seller_2_title'), desc: t('audience.seller_2_desc'), color: "from-indigo-400 to-indigo-600" },
-    { icon: <Zap size={20} />, title: t('audience.seller_3_title'), desc: t('audience.seller_3_desc'), color: "from-sky-400 to-sky-600" },
+    { icon: <Globe size={20} />, title: t('audience.seller_1_title'), desc: t('audience.seller_1_desc'), color: "from-blue-500 to-blue-700" },
+    { icon: <TrendingUp size={20} />, title: t('audience.seller_2_title'), desc: t('audience.seller_2_desc'), color: "from-blue-500 to-blue-700" },
+    { icon: <Zap size={20} />, title: t('audience.seller_3_title'), desc: t('audience.seller_3_desc'), color: "from-blue-500 to-blue-700" },
     { icon: <Package size={20} />, title: t('audience.seller_4_title'), desc: t('audience.seller_4_desc'), color: "from-blue-500 to-blue-700" },
   ];
 
   const buyerValues = [
-    { icon: <Factory size={20} />, title: t('audience.buyer_1_title'), desc: t('audience.buyer_1_desc'), color: "from-emerald-400 to-emerald-600" },
-    { icon: <Search size={20} />, title: t('audience.buyer_2_title'), desc: t('audience.buyer_2_desc'), color: "from-teal-400 to-teal-600" },
-    { icon: <ShieldCheck size={20} />, title: t('audience.buyer_3_title'), desc: t('audience.buyer_3_desc'), color: "from-sky-400 to-sky-600" },
-    { icon: <Timer size={20} />, title: t('audience.buyer_4_title'), desc: t('audience.buyer_4_desc'), color: "from-emerald-500 to-teal-700" },
+    { icon: <Factory size={20} />, title: t('audience.buyer_1_title'), desc: t('audience.buyer_1_desc'), color: "from-emerald-500 to-emerald-700" },
+    { icon: <Search size={20} />, title: t('audience.buyer_2_title'), desc: t('audience.buyer_2_desc'), color: "from-emerald-500 to-emerald-700" },
+    { icon: <ShieldCheck size={20} />, title: t('audience.buyer_3_title'), desc: t('audience.buyer_3_desc'), color: "from-emerald-500 to-emerald-700" },
+    { icon: <Timer size={20} />, title: t('audience.buyer_4_title'), desc: t('audience.buyer_4_desc'), color: "from-emerald-500 to-emerald-700" },
   ];
 
   return (

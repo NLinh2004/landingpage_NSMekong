@@ -12,11 +12,11 @@ export default function BusinessModels() {
   const { t } = useTranslation();
 
   const steps = [
-    { id: "01", title: t('process.step_1_title'), desc: t('process.step_1_desc'), icon: <FileText className="w-10 h-10" />, color: "from-emerald-400 to-emerald-600" },
-    { id: "02", title: t('process.step_2_title'), desc: t('process.step_2_desc'), icon: <Search className="w-10 h-10" />, color: "from-teal-400 to-teal-600" },
-    { id: "03", title: t('process.step_3_title'), desc: t('process.step_3_desc'), icon: <CreditCard className="w-10 h-10" />, color: "from-sky-400 to-sky-600" },
-    { id: "04", title: t('process.step_4_title'), desc: t('process.step_4_desc'), icon: <Ship className="w-10 h-10" />, color: "from-indigo-400 to-indigo-600" },
-    { id: "05", title: t('process.step_5_title'), desc: t('process.step_5_desc'), icon: <CheckCircle2 className="w-10 h-10" />, color: "from-blue-400 to-blue-600" },
+    { id: "01", title: t('process.step_1_title'), desc: t('process.step_1_desc'), icon: <FileText className="w-10 h-10" />, color: "from-blue-500 to-blue-700" },
+    { id: "02", title: t('process.step_2_title'), desc: t('process.step_2_desc'), icon: <Search className="w-10 h-10" />, color: "from-blue-500 to-blue-700" },
+    { id: "03", title: t('process.step_3_title'), desc: t('process.step_3_desc'), icon: <CreditCard className="w-10 h-10" />, color: "from-blue-500 to-blue-700" },
+    { id: "04", title: t('process.step_4_title'), desc: t('process.step_4_desc'), icon: <Ship className="w-10 h-10" />, color: "from-blue-500 to-blue-700" },
+    { id: "05", title: t('process.step_5_title'), desc: t('process.step_5_desc'), icon: <CheckCircle2 className="w-10 h-10" />, color: "from-blue-500 to-blue-700" },
   ];
 
   return (
