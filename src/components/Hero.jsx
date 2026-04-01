@@ -4,10 +4,11 @@ import { useTranslation, Trans } from "react-i18next";
 
 
 const backgrounds = [
-  "/b9.jpg",
   "/b8.jpg",
-  "/b5.jpg",
-  "/b7.jpg"
+  "/b9.jpg",
+  "/b7.jpg",
+  "/b5.jpg"
+
 ];
 
 export default function Hero() {
