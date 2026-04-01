@@ -56,7 +56,7 @@ export default function MarketStory() {
             className="relative"
           >
             <div className="absolute inset-0 bg-emerald-500/10 rounded-3xl transform rotate-3 scale-105 blur-2xl -z-10"></div>
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.12)] border-4 border-white group">
+            <div className="relative rounded-3xl overflow-hidden shadow-story border-4 border-white group">
               <img
                 src={marketImgV2}
                 alt="Expressive Market Growth"

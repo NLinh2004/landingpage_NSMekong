@@ -73,8 +73,8 @@ export default function Features() {
               transition={{ repeat: Infinity, duration: 4 }}
               className="absolute top-6 -right-8 glass-card-premium rounded-2xl p-6 border-emerald-100 shadow-2xl"
             >
-              <p className="text-emerald-700 font-black text-xl mb-1">99.9%</p>
-              <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">{t('features.uptime_security')}</p>
+              <p className="text-emerald-700 font-bold text-xl mb-1">99.9%</p>
+              <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">{t('features.uptime_security')}</p>
             </motion.div>
           </motion.div>
 
@@ -88,7 +88,7 @@ export default function Features() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-[2px] w-12 bg-amber-500"></div>
-                <span className="text-emerald-600 font-black text-sm tracking-[0.2em]">{t('features.badge_3')}</span>
+                <span className="text-emerald-600 font-bold text-sm tracking-[0.2em]">{t('features.badge_3')}</span>
                 <div className="h-[2px] w-12 bg-amber-500"></div>
               </div>
 
@@ -120,7 +120,7 @@ export default function Features() {
                     {f.icon}
                   </div>
                   <div>
-                    <h4 className="font-black text-slate-900 text-base tracking-tight group-hover:text-emerald-600 transition-colors">{f.title}</h4>
+                    <h4 className="font-bold text-slate-900 text-base tracking-tight group-hover:text-emerald-600 transition-colors">{f.title}</h4>
                     <p className="text-slate-500 text-sm leading-tight font-medium mt-1">{f.desc}</p>
                   </div>
                 </motion.div>

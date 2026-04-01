@@ -58,7 +58,7 @@ export default function Commitment() {
               </div>
               {/* Seal Decor */}
               <div className="absolute bottom-6 right-6 opacity-10">
-                <div className="w-20 h-20 border-4 border-white rounded-full flex items-center justify-center font-black text-[10px] uppercase text-center rotate-12">
+                <div className="w-20 h-20 border-4 border-white rounded-full flex items-center justify-center font-bold text-[10px] uppercase text-center rotate-12">
                   {t('commitment.quality_seal')}
                 </div>
               </div>
@@ -81,15 +81,15 @@ export default function Commitment() {
                 </div>
 
                 <div className="flex-1 text-center md:text-left">
-                  <span className="text-emerald-600/60 font-black text-[10px] uppercase tracking-widest mb-2 block">{t(`commitment.${idx === 0 ? 'tech_support_label' : 'market_insights_label'}`)}</span>
-                  <h3 className="text-xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-emerald-600 transition-colors uppercase">{item.title}</h3>
+                  <span className="text-emerald-600/60 font-bold text-[10px] uppercase tracking-widest mb-2 block">{t(`commitment.${idx === 0 ? 'tech_support_label' : 'market_insights_label'}`)}</span>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-emerald-600 transition-colors uppercase">{item.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </div>
 
                 {/* Decoration */}
-                <div className="absolute top-8 right-10 text-slate-200 text-6xl font-black opacity-20 pointer-events-none group-hover:text-emerald-500/10 transition-colors">
+                <div className="absolute top-8 right-10 text-slate-200 text-6xl font-bold opacity-20 pointer-events-none group-hover:text-emerald-500/10 transition-colors">
                   0{idx + 1}
                 </div>
               </motion.div>

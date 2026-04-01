@@ -72,11 +72,11 @@ export default function BusinessModels() {
                   {/* Decorative background shape */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-20 blur-[40px] transition-opacity duration-500`} />
 
-                  <div className={`absolute -top-3 -right-3 w-10 h-10 rounded-2xl bg-gradient-to-br ${step.color} text-white text-xs font-black flex items-center justify-center shadow-xl border-4 border-white z-20`}>
+                  <div className={`absolute -top-3 -right-3 w-10 h-10 rounded-2xl bg-gradient-to-br ${step.color} text-white text-xs font-bold flex items-center justify-center shadow-xl border-4 border-white z-20`}>
                     {step.id}
                   </div>
                 </div>
-                <h4 className="text-xl font-black text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors tracking-tight">
+                <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors tracking-tight">
                   {step.title}
                 </h4>
                 <p className="text-slate-500 text-sm leading-relaxed font-medium px-2">{step.desc}</p>

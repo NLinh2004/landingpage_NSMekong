@@ -51,7 +51,7 @@ export default function Hero() {
 
   return (
     <>
-      <section id="home" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-black pt-20 pb-28 lg:pb-20">
+      <section id="home" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-black pt-32 pb-28 lg:pb-20">
         {/* Background image slider */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -84,7 +84,7 @@ export default function Hero() {
               {t('hero.coming_soon')}
             </span>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-8 drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8 drop-shadow-2xl">
               <Trans i18nKey="hero.headline_1" />
             </h1>
 
@@ -131,7 +131,7 @@ export default function Hero() {
           <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 md:p-10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
               <div className="flex-shrink-0">
-                <span className="text-amber-700 text-xs font-black uppercase tracking-[0.3em] bg-amber-100 px-6 py-2.5 rounded-full block text-center md:text-left border border-amber-200">
+                <span className="text-amber-700 text-xs font-bold uppercase tracking-[0.3em] bg-amber-100 px-6 py-2.5 rounded-full block text-center md:text-left border border-amber-200">
                   — {t('hero.expected_goals')} —
                 </span>
               </div>
@@ -142,7 +142,7 @@ export default function Hero() {
                   { num: t('hero.stat_3_num'), label: t('hero.stat_3_text'), color: "text-amber-600" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col items-center md:items-start">
-                    <span className={`text-4xl lg:text-5xl font-black ${stat.color} mb-1 tracking-tighter`}>{stat.num}</span>
+                    <span className={`text-4xl lg:text-5xl font-bold ${stat.color} mb-1 tracking-tighter`}>{stat.num}</span>
                     <p className="text-slate-600 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
                     <div className="w-8 h-1 bg-amber-500/10 mt-3 rounded-full" />
                   </div>

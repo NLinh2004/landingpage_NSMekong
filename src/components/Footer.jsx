@@ -19,7 +19,7 @@ export default function Footer() {
               >
                 M
               </div>
-              <span className="text-lg font-extrabold text-white tracking-tight">
+              <span className="text-lg font-bold text-white tracking-tight">
                 Mekong<span className="text-emerald-500">Agri</span>
               </span>
             </div>

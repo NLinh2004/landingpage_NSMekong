@@ -29,13 +29,44 @@ export default function Navbar() {
         }`}
     >
       <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
-        {/* Logo Section */}
-        <a href="#home" className="flex items-center gap-2 group">
-          <img src="/logo.png" alt="Viện" className="h-10 w-10 object-contain" />
-          <span className={`text-2xl font-bold tracking-tight transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
-            Mekong<span className="text-emerald-500">Agri</span>
-          </span>
-        </a>
+        <div className="flex flex-col items-start gap-3">
+          {/* Back Button Above Logos */}
+          <a 
+            href="https://ctise.vn/" 
+            className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-emerald-500 ${scrolled ? "text-slate-400" : "text-white/50"}`}
+          >
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+            </svg>
+            {t('navbar.back')}
+          </a>
+
+          <div className="flex items-center gap-4">
+            {/* Logo 1: Can Tho Institute */}
+            <div className="flex items-center gap-2 group">
+              <img src="/logo.png" alt="Viện" className="h-10 w-10 object-contain" />
+            </div>
+
+            {/* Divider */}
+            <div className={`h-8 w-px ${scrolled ? "bg-slate-200" : "bg-white/20"}`} />
+
+            {/* Logo 2: Mekong Agri */}
+            <a href="#home" className="flex items-center gap-2 group">
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm"
+                style={{
+                  background: "linear-gradient(135deg, #81ff8a, #64965e)",
+                  color: "#1a3a10"
+                }}
+              >
+                M
+              </div>
+              <span className={`text-2xl font-black tracking-tight transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
+                Mekong<span className="text-emerald-500">Agri</span>
+              </span>
+            </a>
+          </div>
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
@@ -70,7 +101,6 @@ export default function Navbar() {
             onMouseLeave={() => setLangOpen(false)}
           >
             <button
-              onClick={() => setLangOpen(!langOpen)}
               className={`flex items-center gap-1 text-xs font-bold uppercase transition-all cursor-pointer ${scrolled ? "text-slate-900" : "text-white"}`}
             >
               🌐 {currentLang}
@@ -79,14 +109,15 @@ export default function Navbar() {
 
             {/* Dropdown Menu */}
             {langOpen && (
-              <div
-                className="absolute right-0 pt-2 w-32 z-50"
-              >
+              <div className="absolute right-0 pt-2 w-32 z-50">
                 <div className="bg-white rounded-lg shadow-xl border border-slate-100 py-1 overflow-hidden">
                   {languages.map((l) => (
                     <button
                       key={l.code}
-                      onMouseDown={() => { i18n.changeLanguage(l.code); setLangOpen(false); }}
+                      onClick={() => {
+                        i18n.changeLanguage(l.code);
+                        setLangOpen(false);
+                      }}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors ${i18n.language?.startsWith(l.code) ? "bg-emerald-50 text-emerald-500 font-bold" : "text-slate-600 hover:bg-slate-50"}`}
                     >
                       {l.label}

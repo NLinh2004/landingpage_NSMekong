@@ -65,7 +65,7 @@ export default function CTA() {
                   href="https://ctise.vn/lien-he/"
                   whileHover={{ scale: 1.05, y: -4 }}
                   whileTap={{ scale: 0.95 }}
-                  className="premium-button w-full sm:w-auto px-12 py-5 rounded-2xl font-black text-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-[0_20px_40px_rgba(16,185,129,0.25)] flex items-center justify-center gap-3 overflow-hidden"
+                  className="premium-button w-full sm:w-auto px-12 py-5 rounded-2xl font-bold text-lg bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-cta flex items-center justify-center gap-3 overflow-hidden"
                 >
                   {/* shimmer sweep */}
                   <span
@@ -81,10 +81,10 @@ export default function CTA() {
 
                 {/* Secondary – glass */}
                 <motion.a
-                  href="https://ctise.vn/lien-he/"
+                  href="#"
                   whileHover={{ scale: 1.05, y: -4 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-12 py-5 rounded-2xl font-black text-lg text-white border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:bg-white/10 flex items-center justify-center"
+                  className="w-full sm:w-auto px-12 py-5 rounded-2xl font-bold text-lg text-white border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:bg-white/10 flex items-center justify-center"
                 >
                   {t('cta.btn_secondary')}
                 </motion.a>

@@ -25,7 +25,7 @@ export default function SolutionIntro() {
               "60% 40% 30% 70% / 60% 30% 70% 40%"
             ]
           }}
-          className="relative overflow-hidden border border-white/20 bg-white/5 backdrop-blur-md p-12 md:p-24 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+          className="relative overflow-hidden border border-white/20 bg-white/5 backdrop-blur-md p-12 md:p-24 shadow-solution"
           style={{ transition: 'border-radius 12s ease-in-out infinite' }}
         >
           {/* Internal Glows - Adapted for Blob */}
@@ -41,13 +41,14 @@ export default function SolutionIntro() {
               <div className="h-px w-8 bg-amber-500/50"></div>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-[1.1] tracking-tight">
-              {t('solution_intro.title')}
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1]">
+            {t('audience.title_1')}<br />
+            <span className="text-gradient-premium">{t('audience.title_2')}</span>
+          </h2>
 
-            <div className="h-1 w-20 bg-gradient-to-r from-emerald-400 to-teal-500 mx-auto rounded-full mb-10 shadow-[0_0_20px_rgba(52,211,153,0.5)]"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-emerald-400 to-teal-500 mx-auto rounded-full mb-10 shadow-line-glow"></div>
             
-            <p className="text-base md:text-xl text-emerald-50 leading-relaxed font-semibold italic opacity-90 max-w-2xl mx-auto px-4">
+            <p className="text-base md:text-xl text-emerald-50 leading-relaxed font-normal italic opacity-90 max-w-2xl mx-auto px-4">
               "{t('solution_intro.desc')}"
             </p>
 

@@ -10,12 +10,16 @@
   /* Amber 500 / Gold */
   --color-navy: #0f172a;
   /* Slate 900 */
-  --font-weight-normal: 300;
-  --font-weight-medium: 400;
-  --font-weight-semibold: 400;
-  --font-weight-bold: 400;
-  --font-weight-extrabold: 500;
-  --font-weight-black: 500;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 600;
+  --font-weight-extrabold: 700;
+  --font-weight-black: 900;
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.06);
+  --shadow-emerald-glow: 0 0 25px rgba(16, 185, 129, 0.3);
+  --shadow-cta: 0 20px 40px rgba(16, 185, 129, 0.25);
+  --shadow-story: 0 40px 80px rgba(0, 0, 0, 0.12);
+  --shadow-solution: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --shadow-line-glow: 0 0 20px rgba(52, 211, 153, 0.5);
 }
 
 @layer components {
@@ -25,16 +29,17 @@
 
   .text-gradient-gold {
     background-image: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .glass-card-premium {
-    @apply bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.06)];
+    @apply bg-white/70 backdrop-blur-2xl border border-white/40 shadow-premium;
   }
 
   .premium-button {
-    @apply relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:-translate-y-1 active:scale-95;
+    @apply relative overflow-hidden transition-all duration-500 hover:shadow-emerald-glow hover:-translate-y-1 active:scale-95;
   }
 }
 

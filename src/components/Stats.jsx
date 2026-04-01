@@ -24,8 +24,8 @@ export default function Stats() {
               >
                 <div className="text-3xl">{stat.icon}</div>
                 <div>
-                  <p className="text-3xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">{stat.value}</p>
-                  <p className="text-white font-semibold text-sm">{stat.label}</p>
+                  <p className="text-3xl font-medium bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">{stat.value}</p>
+                  <p className="text-white font-medium text-sm">{stat.label}</p>
                   <p className="text-gray-500 text-xs">{stat.sub}</p>
                 </div>
               </div>

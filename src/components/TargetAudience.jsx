@@ -47,17 +47,17 @@ export default function TargetAudience() {
           >
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="h-[2px] w-12 bg-amber-500"></div>
-              <span className="text-amber-600 font-black text-sm tracking-[0.3em]">{t('audience.badge')}</span>
+              <span className="text-amber-600 font-bold text-sm tracking-[0.3em]">{t('audience.badge')}</span>
               <div className="h-[2px] w-12 bg-amber-500"></div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
               {t('audience.title_1')}{" "}
               <span className="text-gradient-premium">{t('audience.title_2')}</span>
             </h2>
 
             <p className="text-lg md:text-xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed italic border-l-4 border-emerald-500/20 pl-8 inline-block text-left">
-              {t('audience.desc_1')} <span className="text-emerald-500 font-black">"{t('audience.desc_2')}"</span> {t('audience.desc_3')} <span className="text-emerald-500 font-black">"{t('audience.desc_4')}"</span>.
+              {t('audience.desc_1')} <span className="text-emerald-500 font-bold">"{t('audience.desc_2')}"</span> {t('audience.desc_3')} <span className="text-emerald-500 font-bold">"{t('audience.desc_4')}"</span>.
             </p>
           </motion.div>
         </div>
@@ -83,8 +83,8 @@ export default function TargetAudience() {
                   <Sprout size={32} />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-black text-slate-900 tracking-tighter">{t('audience.seller_title')}</h4>
-                  <p className="text-amber-600 font-black text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.seller_subtitle')}</p>
+                  <h4 className="text-2xl font-bold text-slate-900 tracking-tighter">{t('audience.seller_title')}</h4>
+                  <p className="text-amber-600 font-bold text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.seller_subtitle')}</p>
                 </div>
               </div>
 
@@ -99,7 +99,7 @@ export default function TargetAudience() {
                       {v.icon}
                     </div>
                     <div>
-                      <h5 className="font-black text-slate-900 text-xl tracking-tight">{v.title}</h5>
+                      <h5 className="font-bold text-slate-900 text-xl tracking-tight">{v.title}</h5>
                       <p className="text-slate-500 text-sm font-medium leading-tight mt-1">{v.desc}</p>
                     </div>
                   </motion.div>
@@ -125,8 +125,8 @@ export default function TargetAudience() {
                   <Globe size={32} />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-black text-slate-900 tracking-tighter">{t('audience.buyer_title')}</h4>
-                  <p className="text-emerald-600 font-black text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.buyer_subtitle')}</p>
+                  <h4 className="text-2xl font-bold text-slate-900 tracking-tighter">{t('audience.buyer_title')}</h4>
+                  <p className="text-emerald-600 font-bold text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.buyer_subtitle')}</p>
                 </div>
               </div>
 
@@ -141,7 +141,7 @@ export default function TargetAudience() {
                       {v.icon}
                     </div>
                     <div>
-                      <h5 className="font-black text-slate-900 text-xl tracking-tight">{v.title}</h5>
+                      <h5 className="font-bold text-slate-900 text-xl tracking-tight">{v.title}</h5>
                       <p className="text-slate-500 text-sm font-medium leading-tight mt-1">{v.desc}</p>
                     </div>
                   </motion.div>
