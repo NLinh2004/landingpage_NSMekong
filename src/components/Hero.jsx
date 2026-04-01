@@ -4,8 +4,13 @@ import { useTranslation, Trans } from "react-i18next";
 import heroShipImg from "../assets/hero_ship.png";
 
 const backgrounds = [
-  "/b4.jpg",
-  "/b1.jpg",
+  "/b9.jpg",
+  "/b6.jpg",
+  "/b8.jpg",
+  "/b5.jpg",
+  "/b7.jpg",
+
+
   heroShipImg
 ];
 
