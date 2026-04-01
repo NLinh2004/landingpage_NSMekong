@@ -16,10 +16,10 @@ export default function TargetAudience() {
   const { t } = useTranslation();
 
   const sellerValues = [
-    { icon: <Globe size={20} />, title: t('audience.seller_1_title'), desc: t('audience.seller_1_desc'), color: "from-amber-400 to-amber-600" },
-    { icon: <TrendingUp size={20} />, title: t('audience.seller_2_title'), desc: t('audience.seller_2_desc'), color: "from-orange-400 to-orange-600" },
-    { icon: <Zap size={20} />, title: t('audience.seller_3_title'), desc: t('audience.seller_3_desc'), color: "from-yellow-400 to-yellow-600" },
-    { icon: <Package size={20} />, title: t('audience.seller_4_title'), desc: t('audience.seller_4_desc'), color: "from-amber-500 to-amber-700" },
+    { icon: <Globe size={20} />, title: t('audience.seller_1_title'), desc: t('audience.seller_1_desc'), color: "from-blue-400 to-blue-600" },
+    { icon: <TrendingUp size={20} />, title: t('audience.seller_2_title'), desc: t('audience.seller_2_desc'), color: "from-indigo-400 to-indigo-600" },
+    { icon: <Zap size={20} />, title: t('audience.seller_3_title'), desc: t('audience.seller_3_desc'), color: "from-sky-400 to-sky-600" },
+    { icon: <Package size={20} />, title: t('audience.seller_4_title'), desc: t('audience.seller_4_desc'), color: "from-blue-500 to-blue-700" },
   ];
 
   const buyerValues = [
@@ -36,7 +36,7 @@ export default function TargetAudience() {
         <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: "radial-gradient(circle, #059669 1px, transparent 1px)", backgroundSize: "60px 60px" }}></div>
       </div>
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-200/40 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-200/40 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-200/40 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="text-center mb-10">
@@ -46,12 +46,12 @@ export default function TargetAudience() {
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-3 mb-4">
-              <div className="h-[2px] w-12 bg-amber-500"></div>
-              <span className="text-amber-600 font-bold text-sm tracking-[0.3em]">{t('audience.badge')}</span>
-              <div className="h-[2px] w-12 bg-amber-500"></div>
+              <div className="h-[2px] w-12 bg-blue-500"></div>
+              <span className="text-blue-600 font-bold text-sm tracking-[0.3em]">{t('audience.badge')}</span>
+              <div className="h-[2px] w-12 bg-blue-500"></div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1]">
               {t('audience.title_1')}{" "}
               <span className="text-gradient-premium">{t('audience.title_2')}</span>
             </h2>
@@ -74,17 +74,17 @@ export default function TargetAudience() {
             transition={{ duration: 0.8 }}
             className="group relative"
           >
-            <div className="absolute inset-0 bg-amber-500/5 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute inset-0 bg-blue-500/5 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="relative rounded-3xl bg-white border border-slate-100 shadow-2xl p-6 overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500" />
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-indigo-500 to-sky-500" />
 
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600 shadow-inner border border-amber-100 transform group-hover:rotate-6 transition-transform duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shadow-inner border border-blue-100 transform group-hover:rotate-6 transition-transform duration-500">
                   <Sprout size={32} />
                 </div>
                 <div>
                   <h4 className="text-2xl font-bold text-slate-900 tracking-tighter">{t('audience.seller_title')}</h4>
-                  <p className="text-amber-600 font-bold text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.seller_subtitle')}</p>
+                  <p className="text-blue-600 font-bold text-[12px] uppercase tracking-[0.2em] mt-1">{t('audience.seller_subtitle')}</p>
                 </div>
               </div>
 
@@ -93,7 +93,7 @@ export default function TargetAudience() {
                   <motion.div
                     key={i}
                     whileHover={{ x: 5 }}
-                    className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-lg hover:border-amber-200 transition-all duration-300 group/item flex items-center gap-4"
+                    className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-lg hover:border-blue-200 transition-all duration-300 group/item flex items-center gap-4"
                   >
                     <div className={`shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br ${v.color} flex items-center justify-center text-xl text-white shadow-lg transform group-hover/item:scale-110 transition-transform`}>
                       {v.icon}

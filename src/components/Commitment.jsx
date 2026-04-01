@@ -10,7 +10,7 @@ export default function Commitment() {
       title: t('commitment.f1_title'),
       desc: t('commitment.f1_desc'),
       icon: <Settings className="w-12 h-12" />,
-      color: "from-amber-400 to-amber-600",
+      color: "from-blue-400 to-blue-600",
       label: "Technical Support"
     },
     {
@@ -45,7 +45,7 @@ export default function Commitment() {
 
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-10 tracking-tighter leading-[1.1]">
               {t('commitment.headline_1')}<br />
-              <span className="text-gradient-gold">{t('commitment.headline_2')}</span>
+              <span className="text-gradient-accent">{t('commitment.headline_2')}</span>
             </h2>
 
             <div className="relative p-10 rounded-2xl bg-slate-900 text-white overflow-hidden shadow-2xl">

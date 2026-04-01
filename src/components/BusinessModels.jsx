@@ -16,7 +16,7 @@ export default function BusinessModels() {
     { id: "02", title: t('process.step_2_title'), desc: t('process.step_2_desc'), icon: <Search className="w-10 h-10" />, color: "from-teal-400 to-teal-600" },
     { id: "03", title: t('process.step_3_title'), desc: t('process.step_3_desc'), icon: <CreditCard className="w-10 h-10" />, color: "from-sky-400 to-sky-600" },
     { id: "04", title: t('process.step_4_title'), desc: t('process.step_4_desc'), icon: <Ship className="w-10 h-10" />, color: "from-indigo-400 to-indigo-600" },
-    { id: "05", title: t('process.step_5_title'), desc: t('process.step_5_desc'), icon: <CheckCircle2 className="w-10 h-10" />, color: "from-amber-400 to-amber-600" },
+    { id: "05", title: t('process.step_5_title'), desc: t('process.step_5_desc'), icon: <CheckCircle2 className="w-10 h-10" />, color: "from-blue-400 to-blue-600" },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function BusinessModels() {
           {/* Connector Line for Desktop */}
           <div className="hidden lg:block absolute top-[60px] left-[10%] right-[10%] h-1 bg-slate-100 rounded-full z-0">
             <motion.div
-              className="h-full bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500"
+              className="h-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}

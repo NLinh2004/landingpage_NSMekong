@@ -17,8 +17,8 @@ export default function MarketStory() {
             transition={{ duration: 1 }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="h-[2px] w-12 bg-amber-500"></div>
-              <span className="text-amber-600 font-black text-sm tracking-[0.2em]">{t('market_story.title')}</span>
+              <div className="h-[2px] w-12 bg-blue-500"></div>
+              <span className="text-blue-600 font-black text-sm tracking-[0.2em]">{t('market_story.title')}</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
@@ -31,7 +31,7 @@ export default function MarketStory() {
                 <p className="text-lg text-slate-600 leading-relaxed font-medium mb-4 relative z-10">
                   {t('market_story.p1')}
                 </p>
-                <div className="absolute -left-6 top-0 bottom-0 w-[2px] bg-amber-500 rounded-full transition-colors" />
+                <div className="absolute -left-6 top-0 bottom-0 w-[2px] bg-blue-500 rounded-full transition-colors" />
               </div>
 
               <div className="group relative">

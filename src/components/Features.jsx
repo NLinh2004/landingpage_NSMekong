@@ -22,7 +22,7 @@ export default function Features() {
       title: t('features.f2_title'),
       desc: t('features.f2_desc'),
       icon: <MessageSquare className="w-6 h-6" />,
-      color: "from-amber-400 to-amber-600",
+      color: "from-blue-400 to-blue-600",
     },
     // Đã xóa phần f3 ở đây
     {
@@ -35,7 +35,7 @@ export default function Features() {
       title: t('features.f5_title'),
       desc: t('features.f5_desc'),
       icon: <Star className="w-6 h-6" />,
-      color: "from-amber-500 to-orange-600",
+      color: "from-blue-500 to-indigo-600",
     },
   ];
 
@@ -44,7 +44,7 @@ export default function Features() {
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
         <div className="absolute top-1/4 right-[-10%] w-96 h-96 bg-emerald-200 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-1/4 left-[-10%] w-96 h-96 bg-amber-100 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-1/4 left-[-10%] w-96 h-96 bg-blue-100 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -57,7 +57,7 @@ export default function Features() {
             transition={{ duration: 1.2 }}
             className="relative order-2 lg:order-1"
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-amber-500/10 rounded-3xl blur-3xl opacity-60 transform rotate-3"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-blue-500/10 rounded-3xl blur-3xl opacity-60 transform rotate-3"></div>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
               <img
                 src={logisticImgV2}
@@ -87,9 +87,9 @@ export default function Features() {
               transition={{ duration: 1 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-[2px] w-12 bg-amber-500"></div>
+                <div className="h-[2px] w-12 bg-blue-500"></div>
                 <span className="text-emerald-600 font-bold text-sm tracking-[0.2em]">{t('features.badge_3')}</span>
-                <div className="h-[2px] w-12 bg-amber-500"></div>
+                <div className="h-[2px] w-12 bg-blue-500"></div>
               </div>
 
               <h3 className="text-4xl font-black text-slate-900 mb-4 leading-[1.1] tracking-tight">

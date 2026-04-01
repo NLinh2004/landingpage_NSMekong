@@ -12,7 +12,7 @@ export default function CTA() {
       {/* ── Background Elements ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-[20%] -left-[10%] w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-[20%] -left-[10%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05)_0%,transparent_70%)]" />
       </div>
 
@@ -48,7 +48,7 @@ export default function CTA() {
               {/* ── Heading ── */}
               <h2 className="text-4xl md:text-5xl font-black text-white mb-10 leading-[1.1] tracking-tight">
                 {t('cta.title_1')} <br />
-                <span className="text-gradient-gold">
+                <span className="text-gradient-accent">
                   {t('cta.title_2')}
                 </span>
                 <br /> {t('cta.title_3')}

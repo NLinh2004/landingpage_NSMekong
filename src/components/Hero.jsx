@@ -131,20 +131,20 @@ export default function Hero() {
           <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 md:p-10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
               <div className="flex-shrink-0">
-                <span className="text-amber-700 text-xs font-bold uppercase tracking-[0.3em] bg-amber-100 px-6 py-2.5 rounded-full block text-center md:text-left border border-amber-200">
+                <span className="text-blue-700 text-xs font-bold uppercase tracking-[0.3em] bg-blue-100 px-6 py-2.5 rounded-full block text-center md:text-left border border-blue-200">
                   — {t('hero.expected_goals')} —
                 </span>
               </div>
               <div className="flex-grow grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 w-full">
                 {[
-                  { num: t('hero.stat_1_num'), label: t('hero.stat_1_text'), color: "text-amber-600" },
-                  { num: t('hero.stat_2_num'), label: t('hero.stat_2_text'), color: "text-amber-600" },
-                  { num: t('hero.stat_3_num'), label: t('hero.stat_3_text'), color: "text-amber-600" }
+                  { num: t('hero.stat_1_num'), label: t('hero.stat_1_text'), color: "text-blue-600" },
+                  { num: t('hero.stat_2_num'), label: t('hero.stat_2_text'), color: "text-blue-600" },
+                  { num: t('hero.stat_3_num'), label: t('hero.stat_3_text'), color: "text-blue-600" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col items-center md:items-start">
                     <span className={`text-4xl lg:text-5xl font-bold ${stat.color} mb-1 tracking-tighter`}>{stat.num}</span>
                     <p className="text-slate-600 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
-                    <div className="w-8 h-1 bg-amber-500/10 mt-3 rounded-full" />
+                    <div className="w-8 h-1 bg-blue-500/10 mt-3 rounded-full" />
                   </div>
                 ))}
               </div>
