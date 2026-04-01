@@ -72,8 +72,8 @@ export default function Hero() {
         </AnimatePresence>
 
         {/* Clean Gradient Overlay for Left Readability */}
-        <div className="absolute inset-0 z-[1] bg-black/30"></div>
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 z-[1] bg-black/20"></div>
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col items-start w-full">
           <motion.div
