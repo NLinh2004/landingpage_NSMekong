@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation, Trans } from "react-i18next";
-import heroShipImg from "../assets/hero_ship.png";
+
 
 const backgrounds = [
   "/b9.jpg",
-  "/b6.jpg",
   "/b8.jpg",
   "/b5.jpg",
-  "/b7.jpg",
-
-
-  heroShipImg
+  "/b7.jpg"
 ];
 
 export default function Hero() {
